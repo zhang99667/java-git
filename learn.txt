@@ -1,0 +1,142 @@
+.
+├── .vscode
+│   └── settings.json
+├── learn.txt
+├── 代码
+│   ├── chapter01
+│   │   ├── Comment01.java
+│   │   ├── Comment02.java
+│   │   ├── Hello.java
+│   │   └── Homework
+│   │       ├── Homework01.java
+│   │       ├── Homework02.java
+│   │       ├── Homework03.java
+│   │       ├── Homework04.java
+│   │       ├── Homework05.java
+│   │       ├── Homework06.java
+│   │       └── Homework07.java
+│   ├── chapter02
+│   │   ├── Homework
+│   │   ├── Var01.java
+│   │   ├── Var02.java
+│   │   └── VarDetails.java
+│   ├── chapter03
+│   │   ├── AutoConvert.java
+│   │   ├── AutoConvertDetail.java
+│   │   ├── Boolean01.java
+│   │   ├── ChangeChar.java
+│   │   ├── ChangeCharExer01.java
+│   │   ├── CharDetails.java
+│   │   ├── FloatDetails.java
+│   │   ├── ForceConvert.java
+│   │   ├── Homework
+│   │   │   ├── Homework01.java
+│   │   │   ├── Homework02.java
+│   │   │   ├── Homework03.java
+│   │   │   └── Homework04.java
+│   │   ├── IntDetails.java
+│   │   ├── StringToBasic.java
+│   │   └── StringToBasicDetail.java
+│   ├── chapter04
+│   │   ├── ArithmeticOperator.java
+│   │   ├── ArithmeticOperatorExercise01.java
+│   │   ├── ArithmeticOperatorExercise02.java
+│   │   ├── AssignOperator.java
+│   │   ├── BitOperator01.java
+│   │   ├── BitOperator02.java
+│   │   ├── Input.java
+│   │   ├── InverseOperator.java
+│   │   ├── LogiclOperator01.java
+│   │   ├── RelationalOperator.java
+│   │   ├── TernaryOperator.java
+│   │   ├── TernaryOperatorDetail.java
+│   │   └── TernaryOperatorExercise.java
+│   ├── chapter05
+│   │   ├── BreakDetail.java
+│   │   ├── BreakExercise01.java
+│   │   ├── BreakExercise02.java
+│   │   ├── DoWhileExercise01.java
+│   │   ├── DoWhileExercise02.java
+│   │   ├── ForDetail.java
+│   │   ├── ForExercise.java
+│   │   ├── ForExercise02.java
+│   │   ├── Homework
+│   │   │   ├── Homework01.java
+│   │   │   ├── Homework02.java
+│   │   │   ├── Homework03.java
+│   │   │   ├── Homework04.java
+│   │   │   └── Homework05.java
+│   │   ├── If01.java
+│   │   ├── If02.java
+│   │   ├── If03.java
+│   │   ├── IfExercise01.java
+│   │   ├── MulForExercise01.java
+│   │   ├── NestedIf.java
+│   │   ├── Stars.java
+│   │   ├── Swatch01.java
+│   │   ├── SwatchDetail.java
+│   │   ├── SwatchExercise.java
+│   │   └── WhileExercise.java
+│   ├── chapter06
+│   │   ├── ArrayAdd.java
+│   │   ├── ArrayAssign.java
+│   │   ├── ArrayCopy.java
+│   │   ├── ArrayDetail.java
+│   │   ├── ArrayExercise01.java
+│   │   ├── ArrayExercise02.java
+│   │   ├── ArrayReverse.java
+│   │   ├── ArrayReverse02.java
+│   │   ├── BubbleSore.java
+│   │   ├── Homework
+│   │   │   ├── Homework01.java
+│   │   │   ├── Homework02.java
+│   │   │   └── Homework03.java
+│   │   ├── SeqSearch.java
+│   │   ├── TwoDimensionArray01.java
+│   │   └── YangHui.java
+│   └── chapter07
+│       ├── Constructor01.java
+│       ├── ConstructorDetail.java
+│       ├── ConstructorExercise.java
+│       ├── HanoiTower.java
+│       ├── Homework
+│       │   ├── Homework01.java
+│       │   ├── Homework02.java
+│       │   ├── Homework03.java
+│       │   ├── Homework04.java
+│       │   ├── Homework05.java
+│       │   ├── Homework06.java
+│       │   ├── Homework07.java
+│       │   ├── Homework08.java
+│       │   ├── Homework09.java
+│       │   ├── Homework10.java
+│       │   ├── Homework11.java
+│       │   └── MoraGame.java
+│       ├── Maze.java
+│       ├── Method01.java
+│       ├── Method02.java
+│       ├── MethodDetail.java
+│       ├── MethodDetail02.java
+│       ├── MethodExercise01.java
+│       ├── MethodExercise02.java
+│       ├── MethodParameter01.java
+│       ├── MethodParameter02.java
+│       ├── Object01.java
+│       ├── Object02.java
+│       ├── OverLoad01.java
+│       ├── OverLoadExercise.java
+│       ├── Recursion01.java
+│       ├── RecursionExercise01.java
+│       ├── TestPerson.java
+│       ├── This01.java
+│       ├── ThisDetai.java
+│       ├── VarParametErexercise.java
+│       ├── VarParameter01.java
+│       ├── VarParameterDetail.java
+│       ├── VarScope01.java
+│       └── VarScopeDetail.java
+└── 笔记
+    ├── Java类组织形式.png
+    └── 第一课.md
+
+16 directories, 123 files
