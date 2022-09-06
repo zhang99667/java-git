@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.eduService.mapper.EduCourseMapper">
+
+    <!--sql 语句：根据课程 id 查询课程确认信息-->
+    <!--id 写 mapper 接口中的方法-->
+    <!--resultType 写类型包的路径-->
+    <!--resultMap 自定义类型-->
+    <select id="getPublishCourseInfo" resultType="com.atguigu.eduService.entity.vo.CoursePublishVo">
+        -- 左外连接
+        SELECT ec.id,-- 课程 id
+               ec.title,-- 课程名
+               ec.cover, -- 课程 封面
+               ec.price,-- 课程 价格
+               ec.lesson_num,-- 课程 课时
+               ecd.description,-- 课程 简介
+               es1.title AS oneSubject,-- 一级分类
+               es2.title AS twoSubject,-- 二级分类
+               et.NAME   AS teacherName -- 讲师姓名
+
+        FROM edu_course ec
+                 LEFT OUTER JOIN edu_course_description ecd ON ec.id = ecd.id
+                 LEFT OUTER JOIN edu_teacher et ON ec.teacher_id = et.id
+                 LEFT OUTER JOIN edu_subject es1 ON ec.subject_parent_id = es1.id
+                 LEFT OUTER JOIN edu_subject es2 ON ec.subject_id = es2.id
+        WHERE ec.id = #{courseId}
+    </select>
+</mapper>
