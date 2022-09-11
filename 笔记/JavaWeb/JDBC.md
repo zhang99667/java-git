@@ -10,7 +10,7 @@
 
 - JDBC 就是使用 Java 语言操作关系型数据库的一套 API
 
-- 全称：( Java DataBase Connectivity ) Java 数据库连接
+- 全称：( **J**ava **D**ata**B**ase **C**onnectivity ) Java 数据库连接
 
 **JDBC 本质：**
 
@@ -64,3 +64,4 @@
 7. 释放资源
 
 ![image-20220910145014278](img/image-20220910145014278.png)
+
