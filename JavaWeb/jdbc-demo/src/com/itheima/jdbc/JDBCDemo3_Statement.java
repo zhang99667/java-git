@@ -1,5 +1,7 @@
 package com.itheima.jdbc;
 
+import org.junit.Test;
+
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +9,7 @@ import java.sql.DriverManager;
 /*
  * JDBC API 详解：Statement
  */
-class JDBCDemo {
+class JDBCDemo3_Statement {
     /*
      * 执行 DML 语句
      *  */
@@ -43,7 +45,7 @@ class JDBCDemo {
             con.commit();
         } catch (Exception e) {
             // 回滚事务
-            con.rollback;
+            con.rollback();
             throw new RuntimeException(e);
         }
 

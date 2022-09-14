@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 /*
  * JDBC API 详解：Connection
  */
-class JDBCDemo {
+class JDBCDemo2_Connection {
     public static void main(String[] args) throws Exception {
         // 1. 注册驱动
         Class.forName("com.mysql.cj.jdbc.Driver"); //  mysql-jdbc 8.0 可以去掉
@@ -30,10 +30,10 @@ class JDBCDemo {
         // 开启事务
         try {
             // 5. 执行 sql1
-            int count1 = stmt.executeUpdate(sql);
+            int count1 = stmt.executeUpdate(sql1);
             // 6. 处理结果1
             System.out.println("Affected rows: "+count1);
-            int a= 3/0;
+            // int a= 3/0; // 抛出一个异常
             // 5. 执行 sql2
             int count2 = stmt.executeUpdate(sql2);
             // 6. 处理结果2
@@ -42,7 +42,7 @@ class JDBCDemo {
             con.commit();
         } catch (Exception e) {
             // 回滚事务
-            con.rollback;
+            con.rollback();
             throw new RuntimeException(e);
         }
 
