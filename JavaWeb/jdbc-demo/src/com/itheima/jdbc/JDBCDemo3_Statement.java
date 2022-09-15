@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 /*
  * JDBC API 详解：Statement
  */
-class JDBCDemo3_Statement {
+public class JDBCDemo3_Statement {
     /*
      * 执行 DML 语句
      *  */
@@ -27,8 +27,7 @@ class JDBCDemo3_Statement {
         Connection con = DriverManager.getConnection(url, username, password);
 
         // 3. 定义 sql
-        String sql1 = "UPDATE account SET money = 3000 WHERE id=1";
-        String sql2 = "UPDATE account SET money = 1000 WHERE id=2";
+        String sql = "UPDATE account SET money = 3000 WHERE id=1";
 
         // 4. 获取执行 sql 的对象 Statement
         Statement stmt = con.createStatement();
