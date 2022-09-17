@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jdbc-demo">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jdbc-demo/production/jdbc-demo/lombok-1.18.22.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdbc-demo/production/jdbc-demo/mysql-connector-java-8.0.18.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdbc-demo/production/jdbc-demo/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdbc-demo/production/jdbc-demo/junit-4.13.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdbc-demo/production/jdbc-demo/druid-1.1.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

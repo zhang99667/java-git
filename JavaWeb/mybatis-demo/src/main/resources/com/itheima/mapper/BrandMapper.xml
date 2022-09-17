@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace:名称空间
+    一般情况下mapper的namespace能随便写，不重复即可，
+    但如果希望使用mybatis动态代理的接口，就需要namespace中的值和需要对应的Mapper(dao)接口的全路径一致。
+    例如：com.zpc.mybatis.dao.UserDao
+-->
+<mapper namespace="com.itheima.mapper.BrandMapper">
+    <!--resultType -> 返回结果的类型，一般为实体类-->
+    <!--
+    数据库表的字段名称 和 实体类的属性名称 不一样，不能自动封装数据
+    蛇转驼峰
+    -->
+    <!--
+        id 自定
+        type 映射类型，一般为对应的实体类
+        column 表的列名
+        property 实体类的属性名
+    -->
+    <resultMap id="brandResultMap" type="com.itheima.pojo.Brand">
+        <!--id 标签用来完成主键的映射-->
+        <!-- <id column="" property=""></id> -->
+        <result column="brand_name" property="brandName"></result>
+        <result column="company_name" property="companyName"></result>
+    </resultMap>
+
+    <select id="selectAll" resultMap="brandResultMap">
+        select *
+        from tb_brand;
+    </select>
+
+    <!--
+        * 参数占位符：
+            1. #{}：会将其替换为 ?. 为了防止 SQL 注入
+            2. ${}：拼 SQL. 会存在 SQL 注入的问题
+            3. 使用时机：
+                * 参数传递的时候：#{}
+                * 表明或者列明不固定的情况（需要拼接字符串）：${} 会存在 SQL 注入问题
+         * 参数类型：parameterType 可以省略
+         * 特殊字符处理：由于 < 是 xml 的开始符号，故在 SQL 语句中 特殊字符护理
+                -->
+    <select id="selectById" resultMap="brandResultMap">
+        select *
+        from tb_brand
+        where id = #{id};
+    </select>
+</mapper>
