@@ -4,6 +4,7 @@ import com.itheima.pojo.Brand;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BrandMapper {
     /*
@@ -28,7 +29,14 @@ public interface BrandMapper {
                             @Param("companyName") String companyName,
                             @Param("status") int status); */
     // 2. 对象参数
-    List<Brand> selectByCondition(Brand brand);
+    // List<Brand> selectByCondition(Brand brand);
 
+    // map 集合
+    List<Brand> selectByCondition(Map map);
+
+    /*
+    * 单条件动态查询
+    *  */
+     List<Brand> SelectByConditionSingle(Brand brand);
 
 }

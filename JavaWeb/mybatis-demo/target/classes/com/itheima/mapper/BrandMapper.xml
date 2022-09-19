@@ -42,20 +42,26 @@
          * 参数类型：parameterType 可以省略
          * 特殊字符处理：由于 < 是 xml 的开始符号，故在 SQL 语句中 特殊字符护理
                 -->
+    <select id="selectByCondition" resultMap="brandResultMap">
+        select *
+        from tb_brand
+        <where>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="companyName != null and companyName != ''">
+                and company_name like #{companyName}
+            </if>
+            <if test="brandName != null and brandName != ''">
+                and brand_name like #{brandName};
+            </if>
+        </where>
+    </select>
+
+
     <select id="selectById" resultMap="brandResultMap">
         select *
         from tb_brand
         where id = #{id};
     </select>
-
-
-    <select id="selectByCondition" resultMap="brandResultMap" >
-        select *
-        from tb_brand
-        where status = #{status}
-          and company_name like #{companyName}
-          and brand_name like #{brandName};
-    </select>
-
-    <!---->
 </mapper>

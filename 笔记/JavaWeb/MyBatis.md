@@ -417,6 +417,116 @@ MyBatis 的配置文件包含了会深深影响 MyBatis 行为的设置和属性
 
 ![image-20220918095619077](img/image-20220918095619077.png)
 
+#### 参数接收
+
+1. 散装参数：如果方法中有 **多个参数**，需要使用 `@Param ("SQL占位符名称")`
+2. 对象参数：对象的 **属性名** 称要和 **参数占位符** 名称 **一致**
+3. map 集合参数
+
+### 查询 - 多条件 - 动态条件查询
+
+- SQL 语句会随着用户的输入或外部条件的变化而变化，我们称为动态 SQL
+
+```xml
+<select id="selectByCondition" resultMap="brandResultMap">
+    select *
+    from tb_brand
+    where
+    <if test="status != null">
+        status = #{status}
+    </if>
+    <if test="companyName != null and companyName != ''">
+        and company_name like #{companyName}
+    </if>
+    <if test="brandName != null and brandName != ''">
+        and brand_name like #{brandName};
+    </if>
+</select>
+```
+
+#### 动态条件查询
+
+* if：条件判断
+  * test：逻辑表达式
+* choose (when, otherwise)
+* trim (where, set)
+* foreach
+
+**问题：如果其中一个条件没写，会导致 SQL 语句报错**
+
+```mysql
+### SQL: select * from tb_brand  where and company_name like ? and brand_name like ?;
+```
+
+解决方法：
+
+* `<where>` 替换 where 关键字。在没有条件时，mybaits 会自动去除 SQL and 语句
+
+  ```xml
+  <select id="selectByCondition" resultMap="brandResultMap">
+      select *
+      from tb_brand
+      <where>
+          <if test="status != null">
+              and status = #{status}
+          </if>
+          <if test="companyName != null and companyName != ''">
+              and company_name like #{companyName}
+          </if>
+          <if test="brandName != null and brandName != ''">
+              and brand_name like #{brandName};
+          </if>
+      </where>
+  </select>
+  ```
+
+* 恒等式
+
+  ```xml
+  <select id="selectByCondition" resultMap="brandResultMap">
+      select *
+      from tb_brand
+      where 1 = 1
+      <if test="status != null">
+      	and status = #{status}
+      </if>
+      <if test="companyName != null and companyName != ''">
+  	    and company_name like #{companyName}
+      </if>
+      <if test="brandName != null and brandName != ''">
+  	    and brand_name like #{brandName};
+      </if>
+  </select>
+  ```
+
+  
+
+### 查询单条动态条件查询
+
+- 从多个条件中选择一个
+  - choose (when, otherwise)：选择，类似于 Java 中的 switch 语句
+
+```xml
+<select id="SelectByConditionSingle" resultType="com.itheima.pojo.Brand">
+    select *
+    from tb_brand
+    where
+    <choose> <!-- 相当于 switch -->
+        <when test="status != null"> <!-- 相当于 case -->
+            status = #{status}
+        </when>
+        <when test="companyName != null and companyName != ''"> <!-- 相当于 case -->
+            companyName like #{companyName}
+        </when>
+        <when test="brandName != null and brandName != ''"> <!-- 相当于 case -->
+            brandName like #{brandName}
+        </when>
+    </choose>
+</select>
+```
+
+
+
 ## 注解完成增删改查
 
 
