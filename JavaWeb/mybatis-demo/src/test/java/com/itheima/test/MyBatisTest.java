@@ -57,4 +57,35 @@ public class MyBatisTest {
         // 5. 释放资源
         sqlSession.close();
     }
+
+    @Test
+    public void testSelectByCondition() throws IOException {
+        // 接收参数
+        int status = 1;
+        String brandName = "华为";
+        String companyName = "华为";
+
+        // 处理参数
+        companyName = "%" + companyName + "%";
+        brandName = "%" + brandName + "%";
+
+
+        // 1. 获取 SQLSessionFactory
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        // 2. 获取 SQLSession 对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        // 3. 获取 Mapper 接口的代理对象
+        BrandMapper brandMapper = sqlSession.getMapper(BrandMapper.class);
+
+        // 4. 执行方法
+        List<Brand> brands = brandMapper.selectByCondition(brandName, companyName, status);
+        System.out.println(brands);
+
+        // 5. 释放资源
+        sqlSession.close();
+    }
 }
