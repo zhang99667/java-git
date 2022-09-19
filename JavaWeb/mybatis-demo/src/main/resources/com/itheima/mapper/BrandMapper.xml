@@ -23,14 +23,78 @@
     <resultMap id="brandResultMap" type="com.itheima.pojo.Brand">
         <!--id 标签用来完成主键的映射-->
         <!-- <id column="" property=""></id> -->
-        <result column="brand_name" property="brandName"></result>
-        <result column="company_name" property="companyName"></result>
+        <result column="brand_name" property="brandName"/>
+        <result column="company_name" property="companyName"/>
     </resultMap>
+
+    <insert id="AddBrand">
+        insert into tb_brand (brand_name, company_name, ordered, description, status)
+        VALUES (#{brandName}, #{companyName}, #{ordered}, #{description}, #{status});
+    </insert>
+
+    <!--主键返回-->
+    <insert id="AddBrandAndReturnId" useGeneratedKeys="true" keyProperty="id">
+        insert into tb_brand (brand_name, company_name, ordered, description, status)
+        VALUES (#{brandName}, #{companyName}, #{ordered}, #{description}, #{status});
+    </insert>
+
+    <update id="updateBrand">
+        update tb_brand
+        set brand_name   = #{brandName},
+            company_name = #{companyName},
+            status       = #{status},
+            description  = #{description},
+            ordered      = #{ordered}
+        where id = #{id};
+    </update>
+
+    <update id="updateBrandDynamic">
+        update tb_brand
+        <set>
+            <if test="brandName != null and brandName != ''">
+                brand_name = #{brandName},
+            </if>
+            <if test="companyName != null and companyName != ''">
+                company_name = #{companyName},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="ordered != null">
+                ordered = #{ordered},
+            </if>
+        </set>
+        where id = #{id};
+    </update>
+
+    <delete id="deleteById">
+        delete
+        from tb_brand
+        where id = #{id};
+    </delete>
+
+
+    <!--mybaits 会将数组的参数，封装为一个 Map 集合
+        * 默认：array = 数组
+        * 使用 @Param 注解 改变 map 集合的默认 key 的名称-->
+    <delete id="deleteByIds">
+        delete
+        from tb_brand
+        where id in (
+        <foreach collection="ids" item="id" separator=",">
+            #{id}
+        </foreach>
+        );
+    </delete>
 
     <select id="selectAll" resultMap="brandResultMap">
         select *
         from tb_brand;
     </select>
+
 
     <!--
         * 参数占位符：
@@ -65,20 +129,21 @@
         where id = #{id};
     </select>
 
-    <select id="SelectByConditionSingle" resultType="com.itheima.pojo.Brand">
+    <select id="SelectByConditionSingle" resultMap="brandResultMap">
         select *
         from tb_brand
-        where
-        <choose> <!-- 相当于 switch -->
-            <when test="status != null"> <!-- 相当于 case -->
-                status = #{status}
-            </when>
-            <when test="companyName != null and companyName != ''"> <!-- 相当于 case -->
-                companyName like #{companyName}
-            </when>
-            <when test="brandName != null and brandName != ''"> <!-- 相当于 case -->
-                brandName like #{brandName}
-            </when>
-        </choose>
+        <where>
+            <choose> <!-- 相当于 switch -->
+                <when test="status != null"> <!-- 相当于 case -->
+                    status = #{status}
+                </when>
+                <when test="companyName != null and companyName != ''"> <!-- 相当于 case -->
+                    companyName like #{companyName}
+                </when>
+                <when test="brandName != null and brandName != ''"> <!-- 相当于 case -->
+                    brandName like #{brandName}
+                </when>
+            </choose>
+        </where>
     </select>
 </mapper>

@@ -444,13 +444,17 @@ MyBatis 的配置文件包含了会深深影响 MyBatis 行为的设置和属性
 </select>
 ```
 
-#### 动态条件查询
+#### 动态条件查询 
 
-* if：条件判断
+[动态SQL之<where>、<if>条件判断](https://blog.csdn.net/u010502101/article/details/79117000/)
+
+* **if：条件判断**
   * test：逻辑表达式
-* choose (when, otherwise)
-* trim (where, set)
-* foreach
+* **choose (when, otherwise)**
+  * `choose` 标签作用是通过条件判断来拼接 SQL 语句，类似于 Java 中的 `switch` 语句，从上到下，当有匹配的条件时，跳出 `choose` 语句
+  * 如果所有条件都不成立则执行 `otherwise` 标签中的内容
+* **trim (where, set)**
+* **foreach**
 
 **问题：如果其中一个条件没写，会导致 SQL 语句报错**
 
@@ -507,25 +511,219 @@ MyBatis 的配置文件包含了会深深影响 MyBatis 行为的设置和属性
   - choose (when, otherwise)：选择，类似于 Java 中的 switch 语句
 
 ```xml
-<select id="SelectByConditionSingle" resultType="com.itheima.pojo.Brand">
+<select id="SelectByConditionSingle" resultMap="brandResultMap">
     select *
     from tb_brand
-    where
-    <choose> <!-- 相当于 switch -->
-        <when test="status != null"> <!-- 相当于 case -->
-            status = #{status}
-        </when>
-        <when test="companyName != null and companyName != ''"> <!-- 相当于 case -->
-            companyName like #{companyName}
-        </when>
-        <when test="brandName != null and brandName != ''"> <!-- 相当于 case -->
-            brandName like #{brandName}
-        </when>
-    </choose>
+    <where>
+        <choose> <!-- 相当于 switch -->
+            <when test="status != null"> <!-- 相当于 case -->
+                status = #{status}
+            </when>
+            <when test="companyName != null and companyName != ''"> <!-- 相当于 case -->
+                companyName like #{companyName}
+            </when>
+            <when test="brandName != null and brandName != ''"> <!-- 相当于 case -->
+                brandName like #{brandName}
+            </when>
+        </choose>
+    </where>
 </select>
 ```
 
+### 添加
 
+1. 编写接口方法：Mapper 接口
+
+   - 参数：除了 id 之外的所有数据
+
+   - 结果：void
+
+   ```java
+   void AddBrand(Brand brand);
+   ```
+
+2. 编写 SQL 语句：SQL 映射文件
+
+   ```xml
+   <insert id="AddBrand" >
+       insert into tb_brand (brand_name, company_name, ordered, description, status) VALUES (#{brandName},#{companyName},#{ordered},#{description},#{status});
+   </insert>
+   ```
+
+3. 执行方法，测试
+
+- MyBatis事务：
+
+  - `openSession()`：默认开启事务，进行增删改操作后需要使用 `sqlSession.commit();` 手动提交事务
+
+  - `openSession(true)`：可以设置为自动提交事务（关闭事务）
+
+    ```java
+    SqlSession sqlSession = sqlSessionFactory.openSession(true);
+    ```
+
+### 添加 - 主键返回
+
+在数据添加成功后，需要获取插入数据库数据的主键的值
+
+- 比如：添加订单和订单项
+
+  1. 添加订单
+
+  1. 添加订单项，订单项中需要设置所属订单的 id
+
+```xml
+<!--主键返回-->
+<insert id="AddBrandAndReturnId" useGeneratedKeys="true" keyProperty="id" >
+    insert into tb_brand (brand_name, company_name, ordered, description, status) VALUES (#{brandName},#{companyName},#{ordered},#{description},#{status});
+</insert>
+```
+
+### 修改 - 修改全部字段
+
+1. 编写接口方法：Mapper 接口
+
+   - 
+     参数：所有数据
+
+   - 结果：void
+
+   ```java
+   void updateBrand(Brand brand);
+   ```
+
+   
+
+2. 编写 SQL 语句：SQL 映射文件
+
+   ```xml
+   <update id="updateBrand">
+       update tb_brand
+       set brand_name   = #{brandName},
+           company_name = #{companyName},
+           status       = #{status},
+           description  = #{description},
+           ordered      = #{ordered}
+       where id = #{id};
+   </update>
+   ```
+
+   
+
+3. 执行方法，测试
+
+### 修改 - 修改动态字段
+
+1. 编写接口方法：Mapper 接口
+
+   - 参数：部分数据，封装到对象中
+
+   - 结果：void
+
+2. 编写 SQL 语句：SQL 映射文件
+
+3. 执行方法，测试
+
+SET 元素可以用于 **动态包含** 需要 **更新的列**，**忽略** 其它 **不更新的列**。
+
+```xml
+<update id="updateBrandDynamic">
+    update tb_brand
+    <set>
+        <if test="brandName != null and brandName != ''">
+            brand_name = #{brandName},
+        </if>
+        <if test="companyName != null and companyName != ''">
+            company_name = #{companyName},
+        </if>>
+        <if test="description != null and description != ''">
+            description = #{description},
+        </if>
+        <if test="status != null">
+            status = #{status},
+        </if>>
+        <if test="ordered != null">
+            ordered = #{ordered},
+        </if>>
+    </set>
+    where id = #{id};
+</update>
+```
+
+> SET 元素会动态地在行首插入 SET 关键字，并会 **删掉额外的逗号**（这些逗号是在使用条件语句给列赋值时引入的）。
+
+### 删除一个
+
+1. 编写接口方法：Mapper 接口
+
+   - 参数：id
+
+   - 结果：void
+
+   ```java
+   void deleteById(int id);
+   ```
+
+   
+
+2. 编写 SQL 语句：SQL 映射文件
+
+   ```xml
+   <delete id="deleteById">
+       delete
+       from tb_brand
+       where id = #{id};
+   </delete>
+   ```
+
+3. 执行方法，测试
+
+### 批量删除
+
+1. 编写接口方法：Mapper 接口
+   参数：id 数组
+   结果：void
+
+   ```java
+   void deleteByIds(@Param("ids") int[] ids);
+   ```
+
+2. 编写 SQL 语句：SQL 映射文件
+
+   ```xml
+   <delete id="deleteByIds">
+       delete
+       from tb_brand
+       where id in (
+       <foreach collection="ids" item="id" separator=",">
+           #{id}
+       </foreach>
+       );
+   </delete>
+   ```
+
+3. 执行方法，测试
+
+**mybaits 会将数组的参数，封装为一个 Map 集合**
+
+    * 默认：`array = 数组`
+        * 使用 `@Param` 注解 改变 map 集合的默认 key 的名称
+
+### MyBatis 参数传递
+
+MyBatis 接口方法中可以接收各种各样的参数，MyBatis 底层对于这些参数进行不同的封装处理方式
+
+- 单个参数：
+  1. POO 类型：
+  2. Map 集合：
+  3. Collection:
+  4. List:
+  5. Array:
+  6. 其他类型：
+
+- 多个参数：
+
+> MyBatis 提供了 ParamNameResolver 类来进行参数封装
 
 ## 注解完成增删改查
 

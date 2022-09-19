@@ -35,8 +35,32 @@ public interface BrandMapper {
     List<Brand> selectByCondition(Map map);
 
     /*
-    * 单条件动态查询
-    *  */
-     List<Brand> SelectByConditionSingle(Brand brand);
+     * 单条件动态查询
+     *  */
+    List<Brand> SelectByConditionSingle(Brand brand);
 
+    /*
+     * 添加
+     *  */
+    void AddBrand(Brand brand);
+
+    /*
+     * 修改
+     *  */
+    void updateBrand(Brand brand);
+
+    /*
+     * 动态修改
+     *  */
+    void updateBrandDynamic(Brand brand);
+
+    /*
+    * 删除
+    *  */
+    void deleteById(int id);
+
+    /*
+    * 批量删除
+    *  */
+    void deleteByIds(@Param("ids") int[] ids);
 }
