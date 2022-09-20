@@ -240,7 +240,10 @@ public class Hello {
 - API ( Application Programming Interface，用程序编程接口 ) 是 Java 提供的基本编程接口( Java 提供的类还有相关的方法) - [中文在线文档](https://www.matools.com )
 
 - Java 语言提供了大量的基础类，因此 Oracle 公司也为这些基础类提供了相应的 API 文档，用于告诉开发者如何使用这些类，以及这些类里包含的方法
-- Java 类的组织形式 - [图](Java类组织形式.png)
+
+- Java 类的组织形式
+
+  ![image-20220920140205828](img/image-20220920140205828.png)
 
 ## 3.4 字符类型 (char) - [CharDetails.java](../代码/CharDetails.java)
 
@@ -266,7 +269,7 @@ public class Hello {
 
 - 数据类型按精度（容量）大小排序为（背，规则）
 
-  ![image-20220331184816846](C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220331184816846.png)
+  ![image-20220331184816846](.\img\image-20220331184816846.png)
 
 - 有多种类型的数据混合运算时，系统首先自动将所有数据转换成容量最大的那种数据类型，然后再进行计算。
 
@@ -387,7 +390,7 @@ b += 2; // b = (byte) (b + 2);
 - **定义：被 Java 语言赋予了特殊含义，用做专门用途的字符串（单词）**
 - 特点：关键字中所有字母都为小写
 
-![image-20220405135804111](C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220405135804111.png)
+![image-20220405135804111](.\img\image-20220405135804111.png)
 
 ## 4.9 保留字
 
@@ -738,7 +741,7 @@ arr = arr2; // arr2 会被当做垃圾，销毁
 
 ### 7.1.1 类与对象的关系[Object01.java](../代码/chapter07/Object01.java)
 
-![image-20220418151618181](C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220418151618181.png)
+![image-20220418151618181](.\img\image-20220418151618181.png)
 
 ```java
 class Cat {
@@ -804,7 +807,7 @@ Person p2 = p1;// 把p1赋给了p2,让p2指向p1
 System.out.printIn(p2.age);
 ```
 
-![image-20220418202000712](C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220418202000712.png)
+![image-20220418202000712](.\img\image-20220418202000712.png)
 
 ## 7.2 成员方法 [Method01.java](../代码/chapter07/Method01.java)
 
@@ -1299,7 +1302,7 @@ class Person {
 
 ​	一般是小写字母 + 小圆点一般是，`com.公司名.项目名.业务模块名`。比如：`com.hspedu.oa.model;;com.hspedu.oa.controller;`
 
-### 7.1.2 常用的包
+### 7.7.2 常用的包
 
 一个包下，包含很多的类，Java 中常用的包有：
 
@@ -1310,14 +1313,14 @@ java.net.* // 网络包，网络开发
 java.awt.* // 是做java的界面开发，GUI
 ```
 
-### 7.1.3 注意事项和使用细节
+### 7.7.3 注意事项和使用细节
 
 - package 的作用是声明当前类所在的包，需要放在类的最上面，一个类中最多只有一句 package
 - import 指令位置放在 package 的下面，在类定义前面，可以有多句且没有顺序要求访问修饰符
 
-## 7.2 访问修饰符
+## 7.8 访问修饰符
 
-### 7.2.1 基本介绍
+### 7.8.1 基本介绍
 
 **Java 提供四种访问控制修饰符号，用于控制方法和属性（成员变量）的访问权限（范围）：**
 
@@ -1329,9 +1332,9 @@ java.awt.* // 是做java的界面开发，GUI
 
 - 私有级别：用 private 修饰，只有类本身可以访问，不对外公开
 
-<img src="C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220504134904174.png" alt="image-20220504134904174" style="zoom: 80%;" />
+<img src=".\img\image-20220504134904174.png" alt="image-20220504134904174" style="zoom: 80%;" />
 
-### 7.2.2 使用的注意事项
+### 7.8.2 使用的注意事项
 
 - 修饰符可以用来修饰类中的属性，成损方法以及类
 - **只有默认的和 public 才能修饰类**，并且遵循上述访问权限的特点
@@ -1380,7 +1383,7 @@ public XX getXxx(){ // 权限判断
 
 ​	当多个类存在相同的属性（变量和方法时，可以从这些类中抽象出父类，在父类中定义这些相同的属性和方法，所有的子类不需要重新定义这些属性和方法，只需要通过 extends 来声明继承父类即可。
 
-<img src="C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220505213044808.png" alt="image-20220505213044808"  />
+<img src=".\img\image-20220505213044808.png" alt="image-20220505213044808"  />
 
 ### 8.2.2 继承的基本语法：
 
@@ -1700,7 +1703,7 @@ super 代表父类的引用，用于访问父类的属性、方法、构造器
 
 - 当子类中有和父类中的成员（属性和方法）重名时，为了访问父类的成员，必须通过super。如果没有重名，使用 super、this、直接访问是一样的效果！
 
-  <img src="C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220507133510034.png" alt="image-20220507133510034" style="zoom: 67%;" />
+  <img src=".\img\image-20220507133510034.png" alt="image-20220507133510034" style="zoom: 67%;" />
 
   
 
@@ -1778,7 +1781,7 @@ class Student extends Person {
 
 ### 8.4.1 重载 (Overload) 和重写 (Override) 的区别
 
-![image-20220507210834490](C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220507210834490.png)
+![image-20220507210834490](.\img\image-20220507210834490.png)
 
 ## 8.5 多态【难】
 
@@ -2167,7 +2170,7 @@ equals：是 Object 类中的方法，只能判断引用类型
 
 默认判断的是地址是否相等，子类中往往重写该方法，用于判断内容是否相等。比如 Integer、String
 
-![image-20220516142237263](C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220516142237263.png)
+![image-20220516142237263](.\img\image-20220516142237263.png)
 
 ### 8.6.2 hashCode 方法
 
@@ -2203,7 +2206,7 @@ equals：是 Object 类中的方法，只能判断引用类型
 
 分层模式：
 
-![image-20220519210957878](C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220519210957878.png)
+![image-20220519210957878](.\img\image-20220519210957878.png)
 
 # 十、Java 面向对象高级
 
@@ -2312,7 +2315,7 @@ static 访问修饰符 数据返回类型 方法名(){...}
 
 - Java 执行的程序 参数1 参数2 参数3
 
-<img src="C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220523220709380.png" alt="image-20220523220709380" style="zoom:50%;" />
+<img src=".\img\image-20220523220709380.png" alt="image-20220523220709380" style="zoom:50%;" />
 
 **特别提示：**
 
@@ -2919,13 +2922,13 @@ class Cat {
 
 - 抽象方法不能有主体，即不能实现如图所示
 
-  <img src="C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220527221147907.png" alt="image-20220527221147907" style="zoom:50%;" />
+  <img src=".\img\image-20220527221147907.png" alt="image-20220527221147907" style="zoom:50%;" />
 
 - 如果一个类 **继承了抽象类**，则它 **必须实现抽象类的所有抽象方法**，除非它自己也声明为 `abstract` 类。
 
 - **抽象方法** **不能使用** `private`、`final` 和 `static` 来修饰，因为这些关键字都是和 **重写相违背的**。
 
-  <img src="C:\Users\a1097\AppData\Roaming\Typora\typora-user-images\image-20220527221917567.png" alt="image-20220527221917567" style="zoom:50%;" />
+  <img src=".\img\image-20220527221917567.png" alt="image-20220527221917567" style="zoom:50%;" />
 
 ### 10.6.3 抽象类最佳实践 - 模板设计模式
 
