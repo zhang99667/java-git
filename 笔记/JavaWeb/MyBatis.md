@@ -714,16 +714,25 @@ SET 元素可以用于 **动态包含** 需要 **更新的列**，**忽略** 其
 MyBatis 接口方法中可以接收各种各样的参数，MyBatis 底层对于这些参数进行不同的封装处理方式
 
 - 单个参数：
-  1. POO 类型：
-  2. Map 集合：
-  3. Collection:
-  4. List:
-  5. Array:
+  1. POO 类型：直接使用，属性名 和 参数占位符名称 一致
+  2. Map 集合：直接使用，键名 和 参数占位符名称 一致
+  3. Collection：
+  4. List：
+  5. Array：
   6. 其他类型：
 
-- 多个参数：
+- 多个参数：封装为 Map 集合。可以使用 `@Param` 注解，替换 Map 集合中默认的 arg 键名，使得代码可读性更高。
 
-> MyBatis 提供了 ParamNameResolver 类来进行参数封装
+  ```java
+  map.put("arg0",参数1)
+  map.put("param1",参数值1)
+  map.put("param2",参数值2)
+  map.put("arg1",参数值2)
+  ```
+
+  
+
+> MyBatis 提供了 ParamNameResolver 类来进行参数封装，可以断点 debug 进去了解一下原理。
 
 ## 注解完成增删改查
 
