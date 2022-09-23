@@ -715,27 +715,67 @@ MyBatis 接口方法中可以接收各种各样的参数，MyBatis 底层对于�
 
 - 单个参数：
   1. POO 类型：直接使用，属性名 和 参数占位符名称 一致
+  
   2. Map 集合：直接使用，键名 和 参数占位符名称 一致
-  3. Collection：
-  4. List：
-  5. Array：
-  6. 其他类型：
-
+  
+  3. Collection：封装为 Map 集合。可以使用 `@Param` 注解，替换 Map 集合中默认的 arg 键名
+  
+     ```java
+     map.put("arg0",collection集合);
+     map.put("collection",collection集合);
+     ```
+  
+  4. List：封装为 Map 集合。可以使用 `@Param` 注解，替换 Map 集合中默认的 arg 键名
+  
+     ```java
+     map.put("arg0",collection集合);
+     map.put("collection",collection集合);
+     map.put("list",list集合);
+     ```
+  
+  5. Array：封装为 Map 集合。可以使用 `@Param` 注解，替换 Map 集合中默认的 arg 键名
+  
+     ```java
+     map.put("collection",数组);
+     map.put("list",数组);
+     ```
+  
+  6. 其他类型：直接使用
+  
 - 多个参数：封装为 Map 集合。可以使用 `@Param` 注解，替换 Map 集合中默认的 arg 键名，使得代码可读性更高。
 
   ```java
+  /*
+   * 如果不加 @Param 注解
+   * 报错：Available parameters are [arg1, arg0, param1, param2]
+   * 即：对应的参数为 [arg1, arg0, param1, param2]
+   */
   map.put("arg0",参数1)
   map.put("param1",参数值1)
   map.put("param2",参数值2)
   map.put("arg1",参数值2)
+  /* @Param 
+  *User Login(@Param("username") String username, @Param("password") String  ,/0
+  password);
+  */
   ```
-
+  
   
 
 > MyBatis 提供了 ParamNameResolver 类来进行参数封装，可以断点 debug 进去了解一下原理。
 
 ## 注解完成增删改查
 
+使用注解开发会比配置文件开发更加忘便
+
+在接口中配置 - `UserMapper.java`
+
+```java
+@Select("select * from tb_user where id = #{id}")
+public User selectByld(int id);
+```
 
 
-## 动态 SQL
+
+> - 注解完成 **简单功能**
+> - XML 映射语句完成 **复杂功能**

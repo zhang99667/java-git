@@ -23,8 +23,8 @@
     <resultMap id="brandResultMap" type="com.itheima.pojo.Brand">
         <!--id 标签用来完成主键的映射-->
         <!-- <id column="" property=""></id> -->
-        <result column="brand_name" property="brandName"></result>
-        <result column="company_name" property="companyName"></result>
+        <result column="brand_name" property="brandName"/>
+        <result column="company_name" property="companyName"/>
     </resultMap>
 
     <insert id="AddBrand">

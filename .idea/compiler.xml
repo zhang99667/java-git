@@ -11,5 +11,8 @@
         <module name="mybatis-demo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="html-demo" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

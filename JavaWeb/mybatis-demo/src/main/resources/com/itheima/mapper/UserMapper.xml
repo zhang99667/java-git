@@ -17,4 +17,11 @@
         from tb_user
         where id = #{id};
     </select>
+
+    <select id="Login" resultType="com.itheima.pojo.User">
+        select *
+        from tb_user
+        where username = #{username}
+          and password = #{password}
+    </select>
 </mapper>

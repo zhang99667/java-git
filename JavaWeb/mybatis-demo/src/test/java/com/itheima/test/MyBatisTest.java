@@ -1,7 +1,9 @@
 package com.itheima.test;
 
 import com.itheima.mapper.BrandMapper;
+import com.itheima.mapper.UserMapper;
 import com.itheima.pojo.Brand;
+import com.itheima.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -372,6 +374,37 @@ public class MyBatisTest {
 
         // 4. 执行方法
         brandMapper.deleteByIds(ids);
+
+        // 提交事务
+        sqlSession.commit();
+
+        // 5. 释放资源
+        sqlSession.close();
+    }
+
+    @Test
+    public void testLogin() throws IOException {
+        // 接收参数
+        String username="zhangsan";
+        String password="1243";
+
+        // 1. 获取 SQLSessionFactory
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        // 2. 获取 SQLSession 对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        // 3. 获取 Mapper 接口的代理对象
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        // 4. 执行方法
+        User login = userMapper.Login(username, password);
+        if (login == null) {
+            System.out.println("登陆失败");
+        }
+        else System.out.println("登陆成功");
 
         // 提交事务
         sqlSession.commit();

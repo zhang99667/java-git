@@ -181,7 +181,7 @@ String datePath = new DateTime().toString("yyyy-MM-dd");
 
 #### NGINX 配置文件 nginx.conf
 
-```xml
+```properties
 #user  nobody;
 worker_processes  1;
 
