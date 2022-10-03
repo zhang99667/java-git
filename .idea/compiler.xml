@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="maven-demo" />
+        <module name="tomcat-demo" />
         <module name="mybatis-demo" />
       </profile>
     </annotationProcessing>
