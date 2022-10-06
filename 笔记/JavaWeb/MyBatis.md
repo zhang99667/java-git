@@ -232,9 +232,23 @@
 
       
 
-> 细节：如果 Mapper 接口名称和 SQL 映射文件名称相同，并在同一目录下，则可以使用包扫描的方式简化 SQL 映射文件的加载
+> 细节：如果 Mapper 接口名称和 SQL `映射文件名称相同`，并在同一目录下，则可以使用包扫描的方式简化 SQL 映射文件的加载
 
 ![image-20220917135207866](img/image-20220917135207866.png)
+
+#### ExampleMapper.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mybatis.example.BlogMapper">
+  <select id="selectBlog" resultType="Blog">
+    select * from Blog where id = #{id}
+  </select>
+</mapper>
+```
 
 #### 手动添加 resource 目录
 
@@ -320,7 +334,7 @@ MyBatis 的配置文件包含了会深深影响 MyBatis 行为的设置和属性
 
   根据接口方法 **生成 statement**
 
-#### 查询 - 查询所有数据
+#### 查询 - 查询所有数据 
 
 1. 编写接口方法：Mapper 接口
 
@@ -446,7 +460,7 @@ MyBatis 的配置文件包含了会深深影响 MyBatis 行为的设置和属性
 
 #### 动态条件查询 
 
-[动态SQL之<where>、<if>条件判断](https://blog.csdn.net/u010502101/article/details/79117000/)
+[动态SQL之`<where>、<if>`条件判断](https://blog.csdn.net/u010502101/article/details/79117000/)
 
 * **if：条件判断**
   * test：逻辑表达式
@@ -459,7 +473,7 @@ MyBatis 的配置文件包含了会深深影响 MyBatis 行为的设置和属性
 **问题：如果其中一个条件没写，会导致 SQL 语句报错**
 
 ```mysql
-### SQL: select * from tb_brand  where and company_name like ? and brand_name like ?;
+### SQL: select * from tb_brand where and company_name like ? and brand_name like ?;
 ```
 
 解决方法：

@@ -782,10 +782,228 @@ resp.sendRedirect(contextPath + "/resp2");
 
 # 案例
 
-## 用尸登录
+## 用户登录
 
-流程说明：
+### 流程说明：
 
-1. 用户填写用序名密码，提交到 LoginServlet
-2. 在 LoginServlet 中使用 MyBatis 查询数据库，验证用户名密码是否正确
-3. 如果正确，响应 “登录成功”，如果错误，响应 “登录失败”
+1. 用户填写用序名密码，提交到
+2.  LoginServlet
+3. 在 LoginServlet 中使用 MyBatis 查询数据库，验证用户名密码是否正确
+4. 如果正确，响应 “登录成功”，如果错误，响应 “登录失败”
+
+![image-20221003160325310](img/image-20221003160325310.png)
+
+### 准备环境：
+
+1. 复制资料中的静态页面到项目的 webapp 目录下
+2. 创建 db1 数据库，创建 tb_user 表，创建 User 实体
+3. 导入 MyBatis 坐标，MySQL 驱动坐标
+4. 创建 mybatis-config.xml 核心配置文件，UserMapper.xml 映射文件，UserMapper 接口
+
+**UserMapper.java**
+
+```java
+package com.itheima.mapper;
+
+import com.itheima.pojo.User;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
+public interface UserMapper {
+    /*
+    * 查找用户
+    *  */
+    @Select("SELECT * FROM tb_user WHERE username = #{username} and password = #{password}")
+    User getUserInfo(@Param("username") String username, @Param("password") String password);
+}
+```
+
+**LoginServlet.java**
+
+```java
+package com.itheima.servlet;
+
+import com.itheima.mapper.UserMapper;
+import com.itheima.pojo.User;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+
+@WebServlet("/loginServlet")
+public class LoginServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("测试");
+        // 1. 接收用户名和密码
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        System.out.println(username);
+        System.out.println(password);
+
+        // 2. 调用 MyBatis 完成查询
+        // 2.1 获取 SqlSessionFactory 对象
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        // 2.2 获取 SQLSession
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        // 2.3 获取 Mapper
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        // 2.4 调用方法
+        User userInfo = userMapper.getUserInfo(username, password);
+        // 2.5 释放资源
+        sqlSession.close();
+
+        // 前端显示
+        // 获取字符输出流，并设置 content type
+        resp.setContentType("text/html;charset=utf-8");
+        PrintWriter writer = resp.getWriter();
+        // 3. 判断 user 释放为 null
+        if (userInfo != null) {
+            // 登陆成功
+            writer.write("登陆成功");
+            System.out.println("success");
+        } else {
+            // 登陆失败
+            writer.write("登陆失败");
+            System.out.println("failed");
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doGet(req, resp);
+    }
+}
+```
+
+## 用户注册
+
+### 流程说明：
+
+1. 用户填写用户名、密码等信息，点击注册按钮，提交到 RegisterServlet
+2. 在 RegisterServlet 中使用 MyBatis 保存数据
+3. 保存前，需要判断用户名是否已经存在：根据用户名查询数据库
+
+![image-20221004214006251](img/image-20221004214006251.png)
+
+## 代码优化
+
+### 问题：
+
+1. 代码重复
+2. SqlSessionFactory 工厂只创建一次，不要重复创建
+
+### 解决办法
+
+`util.SqlSessionFactoryUtils.java`
+
+```java
+package com.itheima.util;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class SqlSessionFactoryUtils {
+    // 静态代码块会随着类的加载而执行且只执行一次，可以把代码放到静态代码块中。
+    private static final SqlSessionFactory sqlSessionFactory;
+
+    static {
+        try {
+            String resource = "mybatis-config.xml";
+            InputStream inputStream = Resources.getResourceAsStream(resource);
+            sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public static SqlSessionFactory getSqlSessionFactory() {
+        return sqlSessionFactory;
+    }
+}
+```
+
+# MVC 及三层架构
+
+## MVC 模式
+
+### MVC 是一种分层开发的模式，其中：
+
+- M：Model，业务模型，处理业务
+- V：View，视图，界面展示
+- C：Controller，控制器，处理请求，调用模型和视图
+
+### MVC 好处
+
+- 
+  职责单一，互不影响
+
+- 有利于分工协作
+
+- 有利于组件重用
+
+![image-20221006200338335](img/image-20221006200338335.png)
+
+## 三层架构
+
+![image-20221006200902169](img/image-20221006200902169.png)
+
+- **数据访问层**：对数据库的 CRUD 基本操作
+- **业务逻辑层**：对业务逻辑进行封装，组合数据访问层层中基本功能，形成复杂的业务逻辑功能
+- **表现层**：接收请求，封装数据，调用业务逻辑层，响应数据
+
+# 会话跟踪技术
+
+## 会话跟踪技术
+
+- **会话**：用户打开浏览器，访问 web 服务器的资源，会话建立，直到有一方断开连接，会话结束。在一次会话中可以包含 **多次** 请求和响应
+
+- **会话跟踪**：一种 **维护浏览器状态** 的方法，服务器需要识别多次请求是否来自于同一浏览器，以便在同一次会话的多次请求之间 **共享数据**
+
+- HTTP 协议是 **无状态** 的，每次浏览器向服务器请求时，服务器都会将该请求视为 **新的** 请求，因此我们需要会话跟踪技术来实现会话内数据共享
+- 实现方式：
+  1. **客户端** 会话跟踪技术：Cookie
+  2. **服务端** 会话跟踪技术：Session
+
+## Cookie
+
+### Cookie 基本使用
+
+**Cookie**：客户端会话技术，将数据保存到客户端，以后每次请求都携带 Cookie 数据进行访问
+
+#### 发送 Cookie
+
+1. 创建 Cookie 对象，设置数据
+   `Cookie cookie new Cookie("key","value");`
+2. 发送 Cookie 到客户端：使用 response 对象
+   `response.addCookie(cookie);`
+
+
+
+### Cookie 原理
+
+### Cookie 使用细节
+
+### Session 基本使用
+
+### Session 原理
+
+### Session 使用细节
+

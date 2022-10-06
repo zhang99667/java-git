@@ -4,24 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81d50dfc-f1f1-4dd0-8022-eb13b2d9e37e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/request-demo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/request-demo/src/main/java/com/itheima/web/request/URLDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomcat-demo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomcat-demo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomcat-demo/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/JavaWeb/img/image-20220923111343329.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/JavaWeb/img/image-20220923112212907.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/JavaWeb/img/image-20220923112428219.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/JavaWeb/img/image-20220923120532705.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/JavaWeb/img/image-20220923124235049.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/JavaWeb/img/image-20220923124641138.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/JavaWeb/img/image-20220923130229796.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/JavaWeb/img/image-20220923130255154.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../笔记/JavaWeb/img/image-20220923130542177.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+    <list default="true" id="81d50dfc-f1f1-4dd0-8022-eb13b2d9e37e" name="Changes" comment="javaweb">
+      <change afterPath="$PROJECT_DIR$/request-demo/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/request-demo/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-demo/.idea/artifacts/request_demo_Web_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-demo/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/request-demo/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-demo/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/request-demo/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/request-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-demo/src/main/java/com/itheima/web/response/ResponseDemo4.java" beforeDir="false" afterPath="$PROJECT_DIR$/request-demo/src/main/java/com/itheima/web/response/ResponseDemo4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/request-demo/target/classes/com/itheima/web/response/ResponseDemo4.class" beforeDir="false" afterPath="$PROJECT_DIR$/request-demo/target/classes/com/itheima/web/response/ResponseDemo4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/JavaWeb/MyBatis.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/JavaWeb/MyBatis.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../笔记/JavaWeb/Web核心.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/JavaWeb/Web核心.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +25,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -51,11 +48,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "E:/java-git/JavaWeb/jdbc-demo",
+    "last_opened_file_path": "E:/java-git",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pathVariables"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -67,8 +69,18 @@
       <option name="presentableId" value="Default" />
       <updated>1663332932219</updated>
       <workItem from="1663332935055" duration="280000" />
-      <workItem from="1664783903319" duration="78000" />
+      <workItem from="1664783903319" duration="406000" />
+      <workItem from="1664787943810" duration="840000" />
+      <workItem from="1665059750943" duration="31000" />
     </task>
+    <task id="LOCAL-00001" summary="javaweb">
+      <created>1664784031128</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664784031128</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,5 +93,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="javaweb" />
+    <option name="LAST_COMMIT_MESSAGE" value="javaweb" />
   </component>
 </project>

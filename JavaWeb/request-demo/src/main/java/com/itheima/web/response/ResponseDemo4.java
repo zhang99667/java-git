@@ -1,8 +1,5 @@
 package com.itheima.web.response;
 
-import org.apache.commons.io.IOUtils;
-import sun.nio.ch.IOUtil;
-
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /*
  * 响应字符数据：设置字符数据的响应体
@@ -31,7 +27,7 @@ public class ResponseDemo4 extends HttpServlet {
         while ((len = fis.read(buff)) != -1) {
             outputStream.write(buff, 0, len );
         } */
-        IOUtils.copy(fis,outputStream);
+        org.apache.commons.io.IOUtils.copy(fis, outputStream);
         fis.close();
     }
 
