@@ -8,8 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class SqlSessionFactoryUtils {
-    // 静态代码块会随着类的加载而执行且只执行一次，可以把代码放到静态代码块中。
-    private static final SqlSessionFactory sqlSessionFactory;
+    // 创建 SqlSessionFactory
+    private static SqlSessionFactory sqlSessionFactory;
 
     static {
         try {
@@ -24,4 +24,5 @@ public class SqlSessionFactoryUtils {
     public static SqlSessionFactory getSqlSessionFactory() {
         return sqlSessionFactory;
     }
+
 }

@@ -982,6 +982,8 @@ public class SqlSessionFactoryUtils {
   1. **客户端** 会话跟踪技术：Cookie
   2. **服务端** 会话跟踪技术：Session
 
+# Cookie 和 Session
+
 ## Cookie
 
 ### Cookie 基本使用
@@ -995,15 +997,208 @@ public class SqlSessionFactoryUtils {
 2. 发送 Cookie 到客户端：使用 response 对象
    `response.addCookie(cookie);`
 
+```java
+package com.itheima.web;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/aServlet")
+public class AServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 发送 Cookie
+
+        // 1. 创建 Cookie 对象
+        Cookie cookie = new Cookie("username", "zhangsan");
+
+        // 2. 发送 Cookie，response
+        resp.addCookie(cookie);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doGet(req, resp);
+    }
+}
+```
+
+#### 获取 Cookie
+
+3. 获取客户端携带的所有 Cookie，使用 request 对象
+
+   ```java
+   Cookie[] cookies = request.getCookies();
+   ```
+
+4. 遍历数组，获取每一个 Cookie 对象 for
+
+5. 使用 Cookie 对象方法获取数据
+
+   ```java
+   cookie.getName();
+   cookie.getValue();
+   ```
+
+```java
+package com.itheima.web;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/bServlet")
+public class BServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 获取 Cookie
+
+        // 1. 获取 Cookie 数组
+        Cookie[] cookies = req.getCookies();
+
+        // 2. 遍历数组
+        for (Cookie cookie : cookies) {
+            // 3. 获取数据
+            String name = cookie.getName();
+            if ("username".equals(name)) {
+                String value = cookie.getValue();
+                System.out.println(name + ":" + value);
+            }
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doGet(req, resp);
+    }
+}
+```
+
+![image-20221007195543132](img/image-20221007195543132.png)
 
 ### Cookie 原理
 
+#### Cookie 的实现是基于 HTTP 协议的
+
+- **响应头**：set-cookie
+- **请求头**：cookie
+
+![image-20221007195900858](img/image-20221007195900858.png)
+
 ### Cookie 使用细节
+
+#### Cookie 存活时间
+
+- 默认情况下，Cookie 存储在浏览器内存中，当浏览器关闭，内存释放，则 Cookie 被销毁
+
+- `setMaxAge(int seconds)`:设置Cookie存活时间
+
+  1. **正数**：将 Cookie 写入浏览器所在电脑的硬盘，**持久化存储**。到时间自动删除
+
+     ```java
+     cookie.setMaxAge(60 * 60 * 24 * 7); // 7 天
+     ```
+
+  2. **负数**：默认值，Cookie 在当前浏览器内存中，当浏览器关闭，则 Cookie 被销毁
+
+  3. **零**：**删除** 对应 Cookie
+
+#### Cookie 存储中文
+
+- Cookie 不能直接存储中文
+- 如需要存储，则需要进行转码：URL 编码
+
+![image-20221007201229560](img/image-20221007201229560.png)
+
+## Session
 
 ### Session 基本使用
 
+#### Session
+
+- **服务端会话跟踪技术**：将数据保存到服务端
+
+- **JavaEE 提供 HttpSession**：接口，来实现一次会话的多次请求间数据共享功能
+
+- **使用**：
+
+  1. 获取 Session 对象
+
+     ```java
+     HttpSession session request.getSession();
+     ```
+
+  2. Session 对象功能：
+
+     - `void setAttribute(String name, Object o)`：存储数据到 session 域中
+
+     - `Object getAttribute(String namel)`：根据 key，获取值
+
+     - `void removeAttribute(String name)`：根据 key，删除该键值对
+
+![image-20221007201843180](img/image-20221007201843180.png)
+
 ### Session 原理
+
+Session 是基于 Cookie 实现的
+
+![image-20221008135133303](img/image-20221008135133303.png)
 
 ### Session 使用细节
 
+#### Session 钝化、活化：
+
+##### 服务器重启后，Session 中的数据是否还在？
+
+- **钝化**：在服务器正常关闭后，Tomcat：会自动将 Session 数据写入硬盘的文件中
+- **活化**：再次启动服务器后，从文件中加载数据到 Session 中
+
+#### Seesion 销毁：
+
+- 默认情况下，无操作，30 分钟自动销毁
+
+  `apache-tomcat-another\conf\web.xml`
+
+  ```xml
+  <session-config>
+  	<session-timeout>30</session-timeout>
+  </session-config>
+  ```
+
+- 调用 Session 对象的 `invalidate()` 方法
+
+  ```java
+  session.invalidate(); // 可以在退出登陆的时候使用
+  ```
+
+## Cookie 和 Session 的联系和区别
+
+Cookie 和 Session 都是来完成一次会话内多次请求间数据共享的
+
+### 区别：
+
+**存储位置**：Cookie 是将数据存储在 **客户端**，Session 将数据存储在 **服务端**
+**安全性**：Cookie **不安全（数据存在客户端，可能被截获篡改）**，Session **安全（数据存在服务端）**
+**数据大小**：Cookie **最大 3KB**，Session **无大小限制**
+**存储时间**：Cookie 可以 **长期存储**，Session **默认 30 分钟**
+**服务器性能**：Cookie **不占** 服务器资源，Session **占用** 服务器资源
+
+# 登录注册案例
+
+### 需求说明
+
+1. 完成用户登录功能，如果用户勾选 “记住用户”，则下次访问登录页面自动填充用户名密码
+2. 完成注册功能，并实现验证码功能
+
+### 用户登录
+
+![image-20221008155127850](img/image-20221008155127850.png)

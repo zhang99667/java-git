@@ -1,7 +1,6 @@
 package com.itheima.mapper;
 
 import com.itheima.pojo.User;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -11,7 +10,6 @@ public interface UserMapper {
      *  */
     @Select("SELECT * FROM tb_user WHERE username = #{username} and password = #{password}")
     User getUserInfo(@Param("username") String username, @Param("password") String password);
-
 
     /*
      * 查找用户名是否重复

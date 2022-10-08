@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/JavaWeb/maven-demo/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb/mybatis-demo/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb/tomcat-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaWeb/cookie-demo/pom.xml" />
       </list>
     </option>
   </component>
