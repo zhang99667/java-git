@@ -17,6 +17,8 @@
     </environments>
     <mappers>
         <!--加载 SQL映射文件-->
-        <mapper resource="com.itheima.mapper"/>
+        <!--        <mapper resource="com.itheima.mapper"/>-->
+        <!--包扫描-->
+        <package name="com.itheima.mapper"/>
     </mappers>
 </configuration>

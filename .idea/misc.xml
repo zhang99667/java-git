@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/JavaWeb/tomcat-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaWeb" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/JavaWeb/mybatis-demo/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb/tomcat-demo/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb/cookie-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaWeb/pom.xml" />
       </list>
     </option>
   </component>

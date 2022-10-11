@@ -8,11 +8,11 @@
         select * from tb_user;
     </select>
 
-    <select id="selectByUsername" resultType="com.itheima.pojo.User">
-        select * from tb_user where username = #{username};
-    </select>
-
     <select id="login" resultType="com.itheima.pojo.User">
         select * from tb_user where username = #{username} and password = #{password};
+    </select>
+
+    <select id="selectUserByUsername" resultType="com.itheima.pojo.User">
+        select * from tb_user where username = #{username};
     </select>
 </mapper>

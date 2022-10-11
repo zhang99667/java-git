@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="cookie-demo:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="15570178-7cef-4490-9c4d-b84533886ec1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../request-demo/.idea/artifacts/request_demo_Web_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cookie-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../cookie-demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/cookie_demo_Web_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/mapper/BrandMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/mapper/BrandMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/pojo/Brand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/servlet/UserServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/util/SqlSessionFactoryUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/web/cookie/AServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/web/cookie/BServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/web/session/SessionDemo1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/com/itheima/web/session/SessionDemo2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/css/register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/imgs/Desert1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/imgs/a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/imgs/reg_bg_min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cookie_demo_Web_exploded/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/BrandMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/pojo/Brand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/pojo/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/servlet/LoginServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/util/SqlSessionFactoryUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/web/cookie/AServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/web/cookie/BServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/web/session/SessionDemo1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itheima/web/session/SessionDemo2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itheima/mapper/BrandMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itheima/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BrandMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/BrandMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/Brand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/servlet/UserServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/util/SqlSessionFactoryUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/web/cookie/AServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/web/cookie/BServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/web/session/SessionDemo1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itheima/web/session/SessionDemo2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/css/register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/imgs/Desert1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/imgs/a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/imgs/reg_bg_min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/com/itheima/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/com/itheima/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/com/itheima/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/com/itheima/servlet/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/com/itheima/web/response/ResponseDemo4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/com/itheima/web/response/ResponseDemo4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/com/itheima/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/servlet/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/servlet/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/com/itheima/servlet/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/util/SqlSessionFactoryUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../request-demo/out/artifacts/request_demo_Web_exploded/WEB-INF/classes/com/itheima/util/SqlSessionFactoryUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/request/RequestDemo1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/request/RequestDemo2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/request/RequestDemo3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/request/RequestDemo4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/request/RequestDemo5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/request/URLDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/request/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/response/ResponseDemo1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/response/ResponseDemo2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/response/ResponseDemo3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/com/itheima/web/response/ResponseDemo4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/lib/commons-io-2.11.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet-api-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/lib/log4j-1.2.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/lib/lombok-1.18.24.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/lib/mybatis-3.5.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-8.0.30.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/lib/protobuf-java-3.19.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/css/register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/imgs/Desert.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/imgs/reg_bg_min.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../request-demo/target/request-demo-1.0-SNAPSHOT/req.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="G:\apache-maven-3.8.5\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2FzHrww3F2HUFmSri05Exh6Tp2c" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "E:/java-git/JavaWeb/cookie-demo/src/main",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "application.passwordSafe"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\java-git\JavaWeb\cookie-demo\src\main" />
+      <recent name="E:\java-git\JavaWeb\cookie-demo\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\java-git\JavaWeb\cookie-demo\src\main\resources" />
+      <recent name="E:\java-git\JavaWeb\cookie-demo\src\main" />
+      <recent name="E:\java-git\JavaWeb\cookie-demo" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 8.5.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="cookie-demo:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/cookie_demo" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="9d94d1f8-85a6-477d-8148-5515ac99133d" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59404" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="cookie-demo:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="15570178-7cef-4490-9c4d-b84533886ec1" name="Changes" comment="" />
+      <created>1665488195833</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665488195833</updated>
+      <workItem from="1665488197312" duration="180000" />
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
