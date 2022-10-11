@@ -9,16 +9,15 @@ public interface UserMapper {
 
     /**
      * 查询所有用户
-     * @return List<User>
+     * @return List<User> 实体
      */
     List<User> selectAll();
 
 
     /**
      * 根据 username 查询用户
-     *
      * @param username 用户名
-     * @return User
+     * @return User 实体
      */
     User selectUserByUsername(@Param("username") String username);
 
