@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="db1@localhost">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.43">
+    <root id="1">
+      <DefaultCasing>lower/lower</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>5.7.29</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="db1">
+      <Current>1</Current>
+    </schema>
+    <schema id="3" parent="1" name="db_songs"/>
+    <schema id="4" parent="1" name="guli"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mybatis"/>
+    <schema id="7" parent="1" name="mybatisplus"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="study"/>
+    <schema id="11" parent="1" name="sys"/>
+    <schema id="12" parent="1" name="test"/>
+    <table id="13" parent="2" name="account">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <table id="14" parent="2" name="dept">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <table id="15" parent="2" name="emp">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <table id="16" parent="2" name="job">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <table id="17" parent="2" name="salarygrade">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <table id="18" parent="2" name="stu">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <table id="19" parent="2" name="tb_brand">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <table id="20" parent="2" name="tb_goods">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <table id="21" parent="2" name="tb_order">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <table id="22" parent="2" name="tb_order_goods">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <table id="23" parent="2" name="tb_user">
+      <Engine>InnoDB</Engine>
+      <CollationName>gb2312_chinese_ci</CollationName>
+    </table>
+    <column id="24" parent="13" name="id">
+      <AutoIncrement>3</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="25" parent="13" name="name">
+      <DataType>varchar(10)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="26" parent="13" name="money">
+      <DataType>double(10,2 digit)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <index id="27" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="29" parent="14" name="id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="30" parent="14" name="dname">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="31" parent="14" name="loc">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <index id="32" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="33" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="34" parent="15" name="id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="35" parent="15" name="ename">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="36" parent="15" name="job_id">
+      <DataType>int(11)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="37" parent="15" name="mgr">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="38" parent="15" name="joindate">
+      <DataType>date|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="39" parent="15" name="salary">
+      <DataType>decimal(7,2 digit)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="40" parent="15" name="bonus">
+      <DataType>decimal(7,2 digit)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="41" parent="15" name="dept_id">
+      <DataType>int(11)|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="42" parent="15" name="emp_jobid_ref_job_id_fk">
+      <ColNames>job_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>job</RefTableName>
+    </foreign-key>
+    <foreign-key id="43" parent="15" name="emp_deptid_ref_dept_id_fk">
+      <ColNames>dept_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>dept</RefTableName>
+    </foreign-key>
+    <index id="44" parent="15" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="45" parent="15" name="emp_jobid_ref_job_id_fk">
+      <ColNames>job_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="46" parent="15" name="emp_deptid_ref_dept_id_fk">
+      <ColNames>dept_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="47" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="48" parent="16" name="id">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="49" parent="16" name="jname">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="50" parent="16" name="description">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <index id="51" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="53" parent="17" name="grade">
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="54" parent="17" name="low_salary">
+      <DataType>int(11)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="55" parent="17" name="high_salary">
+      <DataType>int(11)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <index id="56" parent="17" name="PRIMARY">
+      <ColNames>grade</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="57" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="58" parent="18" name="id">
+      <DataType>int(11)|0s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="59" parent="18" name="NAME">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="60" parent="18" name="age">
+      <DataType>int(11)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="61" parent="18" name="sex">
+      <DataType>varchar(5)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="62" parent="18" name="address">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="63" parent="18" name="math">
+      <DataType>double(5,2 digit)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="64" parent="18" name="english">
+      <DataType>double(5,2 digit)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="65" parent="18" name="hire_date">
+      <DataType>date|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <column id="66" parent="19" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="67" parent="19" name="brand_name">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="68" parent="19" name="company_name">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="69" parent="19" name="ordered">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="70" parent="19" name="description">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="71" parent="19" name="STATUS">
+      <DataType>int(11)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <index id="72" parent="19" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="73" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="74" parent="20" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="75" parent="20" name="title">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="76" parent="20" name="price">
+      <DataType>double(10,2 digit)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <index id="77" parent="20" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="78" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="79" parent="21" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="80" parent="21" name="payment">
+      <DataType>double(10,2 digit)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="81" parent="21" name="payment_type">
+      <DataType>tinyint(4)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="82" parent="21" name="status">
+      <DataType>tinyint(4)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <index id="83" parent="21" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="84" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="85" parent="22" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="86" parent="22" name="order_id">
+      <DataType>int(11)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="87" parent="22" name="goods_id">
+      <DataType>int(11)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="88" parent="22" name="count">
+      <DataType>int(11)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <index id="89" parent="22" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="90" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="91" parent="23" name="id">
+      <AutoIncrement>6</AutoIncrement>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="92" parent="23" name="username">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="93" parent="23" name="password">
+      <DataType>varchar(32)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <index id="94" parent="23" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="95" parent="23" name="username">
+      <ColNames>username</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="96" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="97" parent="23" name="username">
+      <UnderlyingIndexName>username</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

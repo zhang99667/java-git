@@ -35,12 +35,26 @@ public class UserService {
 
         sqlSession.close(); // 关闭会话
 
-        if (user == null) {
-            System.out.println("用户不存在");
-            return true;
-        } else {
-            System.out.println("登陆成功");
-            return false;
+        if (user == null) return false; // 用户不存在
+        else return true;
+    }
+
+    /*
+     * 注册 */
+    public boolean register(User newUserInformation) {
+        // 获取 SqlSessionFactory
+        SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        // 获取 userMapper
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        // 判断用户名是否存在
+        User user = userMapper.selectUserByUsername(newUserInformation.getUsername());
+
+        if (user == null) { // 用户不存在
+            userMapper.register(newUserInformation);
+            sqlSession.commit(); // 提交事务
         }
+        sqlSession.close(); // 关闭会话
+        return user == null;
     }
 }

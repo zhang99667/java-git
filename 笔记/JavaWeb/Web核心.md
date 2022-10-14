@@ -1199,6 +1199,98 @@ Cookie 和 Session 都是来完成一次会话内多次请求间数据共享的
 1. 完成用户登录功能，如果用户勾选 “记住用户”，则下次访问登录页面自动填充用户名密码
 2. 完成注册功能，并实现验证码功能
 
-### 用户登录
+## 用户登录
 
 ![image-20221008155127850](img/image-20221008155127850.png)
+
+### 记住用户
+
+如果用户勾选 “记住用户”，则下次访问登陆页面 **自动** 填充用户名密码
+
+#### 如何自动填充用户名和密码？
+
+1. 将用户名和密码写入 Cookie 中，并且持久化存储 Cookie，下次访问浏览器会自动
+   携带 Cookie
+2. 在页面获取 Cookie 数据后，设置到用户名和密码框中
+
+#### 何时写 Cookie?
+
+1. 登录成功
+2. 用户勾选记住用户复选框
+
+### 记住用户 - 获取 Cookie
+
+如果用户勾选 “记住用户”，则下次访问登陆页面自动填充用户名密码
+
+#### 如何自动填充用户名和密码？
+
+1. 将用户名和密码写入 Cookie 中，并且持久化存储 Cookie，下次访问浏览器会自动
+携带 Cookie
+2. 在页面获取 Cookie 数据后，设置到用户名和密码框中
+
+### 注册案例 - 注册功能
+
+**注册功能**：保存用户信息到数据库
+
+#### 验证码功能：
+
+- **展示验证码**：展示验证码图片，并可以点击切换
+- **校验验证码**：验证码填写不正确，则注册失败
+
+验证码就是使用 Java 代码生成的一张图片
+
+- **验证码作用**：防止机器自动注册，攻击服务器
+
+### 注册案例 - 校验验证码
+
+判断程序生成的验证码和用户输入的验证码是否一样，如果不一样，则阻止注册
+
+验证码图片访问和提交注册表单是两次请求，所以要将程序生成的验证码存入 Session 中
+
+![image-20221013195323480](img/image-20221013195323480.png)
+
+# Filter
+
+- 概念：Filter 表示过滤器，是 JavaWeb 三大组件 (Servlet、Filter、Listener) 之一。
+
+- 过滤器可以把对资源的请求 **拦截** 下来，从而实现一些特殊的功能。
+- 过滤器一般完成一些 **通用** 的操作，比如：权限控制、统一编码处理、敏感字符处理等等
+
+## Filter 快速入门
+
+1. 定义类，实现 Filter 接口，并重写其所有方法
+
+   ```java
+   public class FilterDemo implements Filter{
+       public void init(FilterConfig filterConfig)
+       public void doFilter(ServletRequest request
+       public void destroy(){}
+   }
+   ```
+
+2. 配置 Filter 拦截资源的路径：在类上定义 `@WebFilter` 注解
+
+   ```java
+   @WebFilter("/*")
+   public class FilterDemo implements Filter {
+       
+   }
+   ```
+
+3. 在 doFilter，方法中输出一句话，并放行
+
+   ```java
+   public void doFilter (ServletRequest request,Ser
+   	System.out.println("filter被执行了...")；
+   	// 放行
+   	chain.doFilter(request,response);
+   }
+   ```
+
+   
+
+## Filter 执行流程
+
+## Filter 使用细节
+
+## 案例

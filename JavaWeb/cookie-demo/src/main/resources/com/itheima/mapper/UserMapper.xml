@@ -3,16 +3,26 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.UserMapper">
+    <insert id="register">
+        insert into tb_user (username, password)
+        values (#{username}, #{password});
+    </insert>
 
     <select id="selectAll" resultType="com.itheima.pojo.User">
-        select * from tb_user;
+        select *
+        from tb_user;
     </select>
 
     <select id="login" resultType="com.itheima.pojo.User">
-        select * from tb_user where username = #{username} and password = #{password};
+        select *
+        from tb_user
+        where username = #{username}
+          and password = #{password};
     </select>
 
     <select id="selectUserByUsername" resultType="com.itheima.pojo.User">
-        select * from tb_user where username = #{username};
+        select *
+        from tb_user
+        where username = #{username};
     </select>
 </mapper>

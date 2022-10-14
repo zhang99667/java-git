@@ -24,9 +24,19 @@ public interface UserMapper {
 
 
     /**
+     * 用户登录
+     *
      * @param username 用户名
      * @param password 密码
      * @return User 实体
      */
     User login(@Param("username") String username, @Param("password") String password);
+
+
+    /**
+     * 用户注册
+     *
+     * @param user 传递实体
+     */
+    void register(User user);
 }
