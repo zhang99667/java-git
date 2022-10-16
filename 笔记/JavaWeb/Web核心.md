@@ -787,7 +787,7 @@ resp.sendRedirect(contextPath + "/resp2");
 ### 流程说明：
 
 1. 用户填写用序名密码，提交到
-2.  LoginServlet
+2. LoginServlet
 3. 在 LoginServlet 中使用 MyBatis 查询数据库，验证用户名密码是否正确
 4. 如果正确，响应 “登录成功”，如果错误，响应 “登录失败”
 
@@ -952,8 +952,7 @@ public class SqlSessionFactoryUtils {
 
 ### MVC 好处
 
-- 
-  职责单一，互不影响
+- 职责单一，互不影响
 
 - 有利于分工协作
 
@@ -1225,7 +1224,7 @@ Cookie 和 Session 都是来完成一次会话内多次请求间数据共享的
 #### 如何自动填充用户名和密码？
 
 1. 将用户名和密码写入 Cookie 中，并且持久化存储 Cookie，下次访问浏览器会自动
-携带 Cookie
+   携带 Cookie
 2. 在页面获取 Cookie 数据后，设置到用户名和密码框中
 
 ### 注册案例 - 注册功能
@@ -1280,7 +1279,7 @@ Cookie 和 Session 都是来完成一次会话内多次请求间数据共享的
 3. 在 doFilter，方法中输出一句话，并放行
 
    ```java
-   public void doFilter (ServletRequest request,Ser
+   public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
    	System.out.println("filter被执行了...")；
    	// 放行
    	chain.doFilter(request,response);
@@ -1291,6 +1290,285 @@ Cookie 和 Session 都是来完成一次会话内多次请求间数据共享的
 
 ## Filter 执行流程
 
+1. 放行后访问对应资源，资源访问完成后，还会回到 Filter 中吗？会
+
+2. 如果回到 Filter 中，是重头执行还是执行放行后的逻辑呢？**放行后逻辑**
+
+   `执行放行前逻辑 -> 放行 -> 访问资源 -> 执行放行后逻辑`
+
+![image-20221014103246016](img/image-20221014103246016.png)
+
+> **放行前**，对 request 数据进行处理
+>
+> **放行后**，对 Response 数据进行处理
+
 ## Filter 使用细节
 
+### Filter 拦截路径配置
+
+Filter 可以根据需求，配置不同的拦截资源路径
+
+```java
+@WebFilter("/*")
+public class FilterDemo
+```
+
+- **拦截具体的资源**：`index.jsp`：只有访问 index.jsp 时才会被拦截。
+
+- **目录拦截**：`/user/*`：访问 `/user` 下的所有资源，都会被拦截
+
+- **后缀名拦截**：`*.jsp`：访问后缀名为 jsp 的资源，都会被拦截
+
+- **拦截所有**：`/*`：访问所有资源，都会被拦截
+
+### 过滤器链
+
+- 一个 Web 应用，可以配置多个过滤器，这多个过滤器称为过滤器链
+
+![image-20221014104634176](img/image-20221014104634176.png)
+
+- 注解配置的 Filter，优先级按照过滤器类名（字符串）的自然排序
+
 ## 案例
+
+### 登录验证
+
+需求：访问服务器资源时，需要先进行登录验证，如果没有登录，则自动跳转到登录页面
+
+![image-20221014174319633](img/image-20221014174319633.png)
+
+# Listener
+
+## Listener
+
+### 概念
+
+- Listener 表示监听器，是 JavaWeb 三大组件 (Servlet、Filter、Listener) 之一。
+
+- 监听器可以监听就是在 application，session，request：三个对象创建、销毁或者往其中添加修改删除属性时 **自动** 执行代码的功能组件
+
+### Listener 分类
+
+JavaWeb 中提供了 8 个监听器
+
+![image-20221014175132557](img/image-20221014175132557.png)
+
+## ServletContextListener 使用
+
+1. 定义类，实现 ServletContextListener 接口
+2. 在类上添加 `@WebListener` 注解
+
+# AJAX
+
+## AJAX
+
+### 概念
+
+AJAX (Asynchronous JavaScript And XML)：异步的 JavaScript 和 XML
+
+[AJAX 简介 (w3school.com.cn)](https://www.w3school.com.cn/js/js_ajax_intro.asp)
+
+### AJAX 作用
+
+1. 与服务器进行数据交换：通过 AJAX 可以给服务器发送请求，并获取服务器响应的数据
+   - 使用了 AJAX 和服务器进行通信，就可以使用 `HTML+AJAX` 来替换 JSP 页面了
+2. **异步交互**：可以在 **不重新加载整个页面（页面局部更新）** 的情况下，与服务器交换数据并更新部分网页的技术，如：搜索联想、用户名是否可用校验，等等
+
+![image-20221014180330583](img/image-20221014180330583.png)
+
+## 同步和异步
+
+![image-20221014181924041](img/image-20221014181924041.png)
+
+## AJAX 快速入门
+
+1. 编写 AjaxServlet，并使用 response 输出字符串
+
+2. 创建 XMLHttpRequest 对象：用于和服务器交换数据
+
+   ```java
+   var xhttp;
+   if (window.XMLHttpRequest) {
+       xhttp = new XMLHttpRequest();
+   } else {
+       // code for IE6, IE5
+       xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+   }
+   ```
+
+3. 向服务器发送请求
+
+   ```java
+   xhttp.open("GET", "http://localhost:8080/ajax_demo/ajaxServlet");
+   xhttp.send();
+   ```
+
+4. 获取服务器响应数据
+
+   ```java
+   xhttp.onreadystatechange = function() {
+     if (this.readyState == 4 && this.status == 200) {
+       alert(this.responseText);
+     }
+   };
+   ```
+
+![image-20221014182345859](img/image-20221014182345859.png)
+
+### 使用 AJAX 验证用户名是否存在
+
+需求：在完成用户注册时，当用户名输入框失去焦点时，校验用户名是否在数据库已存在
+
+![image-20221014191247498](img/image-20221014191247498.png)
+
+## Axios 异步框架
+
+### Axios 异步框架
+
+Axios 对原生的 AJAX 进行封装，简化书写
+
+官网：https://www.axios-http.cn
+
+### Axios 快速入门
+
+1. 引入 axios 的 js 文件
+
+   ```html
+   <script src="js/axios.min.js"></script>
+   ```
+
+2. 使用 axios 发送请求，并获取响应结果
+
+   ```html
+   <script>
+       // 1. get
+       axios({
+         method: "get",
+         url: "http://localhost:8080/ajax_demo/AxiosServlet?username=zhangsan",
+       }).then(function (resp) {
+           alert(resp.data)
+       });
+   </script>
+   ```
+
+### Axios 请求方式别名
+
+为了方便起见，Axios 已经为所有支持的请求方法提供了别名。
+
+- `axios.get(url[,config])`
+- `axios.delete(url[,config])`
+- `axios.head(url[,config])`
+- `axios.options(url[,config])`
+- `axios.post(url[,data[,config]])`
+- `axios.put(url[,data[,config]])`
+- `axios.patch(url[,data[,config]])`
+
+![image-20221015111356634](img/image-20221015111356634.png)
+
+- 发送 get 请求
+
+  ```html
+  <script>
+      axios.get("URL").then(function (resp){
+          alert(resp.data);
+      })
+  </script>
+  ```
+
+- 发送 post 请求
+
+  ```html
+  <script>
+      axios.post("URL","Param").then(function (resp){
+          alert(resp.data);
+      })
+  </script>
+  ```
+
+  
+
+## JSON
+
+### 概念
+
+- (JavaScript Object Notation) JavaScript 对象表示法
+
+- 由于其语法简单，层次结构鲜明，现多用于作为 **数据载体**，在网络中进行数据传输
+
+![image-20221015112532097](img/image-20221015112532097.png)
+
+![image-20221015112539998](img/image-20221015112539998.png)
+
+### JSON 基础语法
+
+#### 定义
+
+![image-20221015113818179](img/image-20221015113818179.png)
+
+#### value 的数据类型为：
+
+- 
+  数字（整数或浮点数）
+
+- 字符串（在双引号中）
+
+- 逻辑值（true 或 false）
+
+- 数组（在方括号中）
+
+- 对象（在花括号中）
+
+- null
+
+#### 获取数据
+
+`变量名.key`
+
+
+
+## JSON 数据和 Java 对象转换
+
+**请求数据**：JSON 字符串转为 Java 对象
+
+**响应数据**：Java 对象转为 JSON 字符串
+
+![image-20221015114455124](img/image-20221015114455124.png)
+
+### Fastjson
+
+Fastjson，是阿里巴巴提供的一个 Java 语言编写的高性能功能完善的 JSON 库，是目前 Java 语言中最快的 JSON 库，可以实现 Java 对象和 JSON 字符串的相互转换。
+
+#### 使用
+
+- 导入坐标
+
+```xml
+<!--fastjson-->
+<dependencies>
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>2.0.14.graal</version>
+    </dependency>
+</dependencies>
+```
+
+- Java 对象转 JSON
+
+  `String jsonStr = JSON.toJSONString(obj);`
+
+- JSON 字符串转 Java 对象
+
+  `User user = JSON.parseObject(jsonStr,User.class);`
+
+### 问题：POST 乱码
+
+解决：
+
+```java
+@Override
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    request.setCharacterEncoding("utf-8"); // 加上这句
+    this.doGet(request, response);
+}
+```

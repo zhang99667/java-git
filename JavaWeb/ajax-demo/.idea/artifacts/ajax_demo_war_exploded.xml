@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ajax-demo:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ajax_demo_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ajax-demo" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:2.0.14.graal" />
+          <element id="library" level="project" name="Maven: com.alibaba.fastjson2:fastjson2-extension:2.0.14.graal" />
+          <element id="library" level="project" name="Maven: com.alibaba.fastjson2:fastjson2:2.0.14.graal" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.11" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.30" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.24" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="ajax-demo/web/Web" />
+      <element id="javaee-facet-resources" facet="ajax-demo/web/Web3" />
+      <element id="javaee-facet-resources" facet="ajax-demo/web/Web2" />
+      <element id="javaee-facet-resources" facet="ajax-demo/web/Web4" />
+    </root>
+  </artifact>
+</component>

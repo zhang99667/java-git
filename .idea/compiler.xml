@@ -10,7 +10,8 @@
         <module name="mybatis-demo" />
         <module name="maven-demo" />
         <module name="tomcat-demo" />
-        <module name="JavaWeb" />
+        <module name="filter-demo" />
+        <module name="ajax-demo" />
         <module name="cookie-demo" />
       </profile>
     </annotationProcessing>

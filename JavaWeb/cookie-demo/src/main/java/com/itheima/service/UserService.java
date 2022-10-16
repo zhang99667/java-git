@@ -40,7 +40,8 @@ public class UserService {
     }
 
     /*
-     * 注册 */
+     * 注册
+     *  */
     public boolean register(User newUserInformation) {
         // 获取 SqlSessionFactory
         SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
