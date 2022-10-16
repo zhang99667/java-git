@@ -6,10 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mybatis-demo" />
         <module name="maven-demo" />
         <module name="tomcat-demo" />
+        <module name="filter-demo" />
+        <module name="brand-case" />
+        <module name="ajax-demo" />
         <module name="request-demo" />
+        <module name="mybatis-demo" />
+        <module name="cookie-demo" />
       </profile>
     </annotationProcessing>
   </component>
