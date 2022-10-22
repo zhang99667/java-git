@@ -2,11 +2,26 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring" />
+        <module name="Spring_10_container" />
+        <module name="Spring_11_annotation_bean" />
+        <module name="Spring_06_di_constructor" />
+        <module name="Spring_07_di_autoware" />
+        <module name="Spring_04_bean_lifecycle" />
+        <module name="Spring_03_bean_instance" />
+        <module name="Spring_14_annotation_third_bean_manager" />
+        <module name="Spring_09_datasource" />
+        <module name="Spring_01_quickstart" />
+        <module name="Spring_05_di_set" />
+        <module name="Spring_12_annotation_bean_manager" />
+        <module name="Spring_02_base_config" />
+        <module name="Spring_13_annotation_di" />
+        <module name="Spring_15_spring_mybatis" />
+        <module name="Spring_08_di_collection" />
       </profile>
     </annotationProcessing>
   </component>

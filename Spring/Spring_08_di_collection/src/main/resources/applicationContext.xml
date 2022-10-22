@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.itheima.dao.impl.BookDaoImpl" id="bookDao">
+        <property name="array">
+            <array>
+                <value>100</value>
+                <value>200</value>
+                <value>300</value>
+            </array>
+        </property>
+
+        <property name="list">
+            <list>
+                <value>itcast</value>
+                <value>itheima</value>
+                <value>xuexi</value>
+            </list>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>itcast</value>
+                <value>itheima</value>
+                <value>xuexi</value>
+                <value>xuexi</value>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="country" value="China"/>
+                <entry key="province" value="Beijing"/>
+                <entry key="city" value="Beijing"/>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="country">China</prop>
+                <prop key="province">Beijing</prop>
+                <prop key="city">Beijing</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean class="com.itheima.service.impl.BookServiceImpl" id="bookService" autowire="byType"/>
+
+</beans>

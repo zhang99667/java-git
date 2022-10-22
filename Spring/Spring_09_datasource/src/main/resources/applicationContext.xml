@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--1. 开启 context 命名空间-->
+    <!--2. 使用 context 空间加载 properties 文件-->
+    <context:property-placeholder location="jdbc.properties"/>
+
+    <!--管理 DruidDataSource 对象-->
+    <!--3. 使用属性占位符 ${} 读取 properties 中的属性-->
+    <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <bean class="com.itheima.dao.impl.UserDaoImpl" id="userDao">
+        <property name="name" value="${jdbc.driver}"/>
+    </bean>
+    
+    <!--    <bean class="com.mchange.v2.c3p0.ComboPooledDataSource" id="dataSource">
+            <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+            <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/spring_db"/>
+            <property name="user" value="root"/>
+            <property name="password" value="root"/>
+        </bean>-->
+</beans>
