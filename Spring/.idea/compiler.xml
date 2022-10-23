@@ -20,9 +20,13 @@
         <module name="Spring_12_annotation_bean_manager" />
         <module name="Spring_02_base_config" />
         <module name="Spring_13_annotation_di" />
+        <module name="Spring_16_spring_junit" />
         <module name="Spring_15_spring_mybatis" />
         <module name="Spring_08_di_collection" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring_16_spring_mybatis2" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

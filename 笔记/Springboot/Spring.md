@@ -1237,21 +1237,44 @@ public DataSource dataSource(BookDao bookDao) {
 
 ## Spring 整合 MyBatis
 
+[Spring利用注解整合Mybatis的方法详解_java_脚本之家 (jb51.net)](https://www.jb51.net/article/251138.htm)
 
+### 思路分析 - 分析 bean
 
+#### MyBatis 程序核心对象分析
 
+![image-20221023115449093](img/image-20221023115449093.png)
 
+![image-20221023115638459](img/image-20221023115638459.png)
 
+### 整合 MyBatis
 
+![image-20221023140426578](img/image-20221023140426578.png)
 
+## 整合 JUnit
 
+### 使用 Spring 整合 Junit 专用的类加载器
 
+```java
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = SpringConfig.class)
+public class UserServiceTest extends TestCase {
 
+    @Autowired
+    private UserService userService;
 
+    @Test
+    public void testSelectById() {
+        User user = userService.selectById(2);
+        System.out.println(user);
+    }
 
-
-
-
+    @Test
+    public void testSelectAll() {
+        System.out.println(userService.selectAll());
+    }
+}
+```
 
 
 
