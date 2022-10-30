@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringMVC_09_result" />
+        <module name="SpringMVC_10_exception" />
+        <module name="SpringMVC_12_intercepter" />
+        <module name="SpringMVC_01_quickstart" />
+        <module name="SpringMVC_07_rest_case" />
+        <module name="SpringMVC_04_request_param" />
+        <module name="SpringMVC_08_ssm" />
+        <module name="SpringMVC_05_response" />
+        <module name="SpringMVC_06_rest" />
+        <module name="SpringMVC_03_request_mapping" />
+        <module name="SpringMVC_02_bean_load" />
+        <module name="SpringMVC_11_page" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

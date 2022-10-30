@@ -1262,7 +1262,7 @@ class Person {
 
 ---
 
-## 7.6 this 关键字 [ThisDetai.java](../代码/chapter07/ThisDetai.java)
+## 7.6 this 关键字 [ThisDetail.java](../代码/chapter07/ThisDetail.java)
 
 ​	简单的说，那个对象调用，this 就代耒那个对象。
 

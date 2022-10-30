@@ -12,17 +12,24 @@
         <module name="Spring_06_di_constructor" />
         <module name="Spring_07_di_autoware" />
         <module name="Spring_04_bean_lifecycle" />
+        <module name="Spring_20_aop_advice_data" />
         <module name="Spring_03_bean_instance" />
         <module name="Spring_14_annotation_third_bean_manager" />
+        <module name="Spring_23_case_transfer_log" />
         <module name="Spring_09_datasource" />
         <module name="Spring_01_quickstart" />
         <module name="Spring_05_di_set" />
+        <module name="Spring_18_aop_advice_type" />
         <module name="Spring_12_annotation_bean_manager" />
+        <module name="Spring_19_case_interface_run_speed" />
         <module name="Spring_02_base_config" />
+        <module name="Spring_22_case_transfer" />
         <module name="Spring_13_annotation_di" />
+        <module name="Spring_21_case_handle_password" />
         <module name="Spring_16_spring_junit" />
         <module name="Spring_15_spring_mybatis" />
         <module name="Spring_08_di_collection" />
+        <module name="Spring_17_aop_quickstart" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

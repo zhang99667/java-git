@@ -25,6 +25,13 @@
         <module>Spring_14_annotation_third_bean_manager</module>
         <module>Spring_15_spring_mybatis</module>
         <module>Spring_16_spring_junit</module>
+        <module>Spring_17_aop_quickstart</module>
+        <module>Spring_18_aop_advice_type</module>
+        <module>Spring_19_case_interface_run_speed</module>
+        <module>Spring_20_aop_advice_data</module>
+        <module>Spring_21_case_handle_password</module>
+        <module>Spring_22_case_transfer</module>
+        <module>Spring_23_case_transfer_log</module>
     </modules>
 
     <properties>
@@ -84,6 +91,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>4.3.7.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.9.1</version>
         </dependency>
 
     </dependencies>

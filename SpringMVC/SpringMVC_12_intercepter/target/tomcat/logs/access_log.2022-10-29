@@ -1,0 +1,12 @@
+127.0.0.1 - - [29/Oct/2022:22:41:11 +0800] "GET /books HTTP/1.1" 500 9643 http-bio-8080-exec-1 95
+127.0.0.1 - - [29/Oct/2022:22:41:46 +0800] "GET /books HTTP/1.1" 200 24 http-bio-8080-exec-1 89
+127.0.0.1 - - [29/Oct/2022:22:41:52 +0800] "GET /users HTTP/1.1" 200 24 http-bio-8080-exec-3 3
+127.0.0.1 - - [29/Oct/2022:22:41:55 +0800] "GET /books HTTP/1.1" 200 24 http-bio-8080-exec-5 1
+127.0.0.1 - - [29/Oct/2022:22:51:01 +0800] "GET /books HTTP/1.1" 200 24 http-bio-8080-exec-1 218
+127.0.0.1 - - [29/Oct/2022:22:52:13 +0800] "GET /books HTTP/1.1" 200 - http-bio-8080-exec-1 92
+127.0.0.1 - - [29/Oct/2022:22:52:25 +0800] "GET /books HTTP/1.1" 200 - http-bio-8080-exec-3 2
+127.0.0.1 - - [29/Oct/2022:22:52:43 +0800] "GET /books/100 HTTP/1.1" 200 25 http-bio-8080-exec-5 68
+127.0.0.1 - - [29/Oct/2022:22:53:42 +0800] "GET /books/100 HTTP/1.1" 200 - http-bio-8080-exec-1 203
+127.0.0.1 - - [29/Oct/2022:23:13:19 +0800] "GET /books HTTP/1.1" 200 - http-bio-8080-exec-1 130
+127.0.0.1 - - [29/Oct/2022:23:25:54 +0800] "GET /books HTTP/1.1" 200 - http-bio-8080-exec-1 57
+127.0.0.1 - - [29/Oct/2022:23:26:41 +0800] "GET /books HTTP/1.1" 200 - http-bio-8080-exec-1 54

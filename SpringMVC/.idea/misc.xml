@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_01_quickstart" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_02_bean_load" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_03_request_mapping" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_04_request_param" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_05_response" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_06_rest" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_07_rest_case" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_08_ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_09_result" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_10_exception" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_11_page" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_12_intercepter" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>
