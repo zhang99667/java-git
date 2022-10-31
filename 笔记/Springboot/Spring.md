@@ -3081,11 +3081,13 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 
 
 
-# SpringBoot 概述
+# SpringBoot
 
 ### SpringBoot 概念
 
-SpringBoot 提供了一种快速使用 Spring 的方式，基于约定优于配置的思想，可以让开发人员不必在配置与逻辑业务之间进行思维的切换，全身心的投入到逻辑业务的代码编写中，从而大大提高了开发的效率，一定程度上缩短了项目周期。2014 年 4 月，SpringBoot1.0.0 发布。Spring 的顶级项目之一 (https:/spring.io)。
+SpringBoot 提供了一种快速使用 Spring 的方式，基于约定优于配置的思想，其设计目的是用来简化Spring应用的初始搭建以及开发过程，可以让开发人员不必在配置与逻辑业务之间进行思维的切换，全身心的投入到逻辑业务的代码编写中，从而大大提高了开发的效率，一定程度上缩短了项目周期。2014 年 4 月，SpringBoot1.0.0 发布。Spring 的顶级项目之一 (https:/spring.io)。
+
+
 
 ![image-20221020180934234](img/image-20221020180934234.png)
 
