@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itheima</groupId>
+    <artifactId>maven</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>maven_02_ssm</module>
+        <module>maven_03_pojo</module>
+        <module>maven_04_dao</module>
+    </modules>
+
+
+    <!--自定义属性-->
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <spring.version>5.2.10.RELEASE</spring.version>
+        <junit.version>4.13.2</junit.version>
+    </properties>
+
+    <dependencies>
+
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--junit-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!--定义依赖管理-->
+    <dependencyManagement>
+    </dependencyManagement>
+
+    <profiles>
+        <!--开发环境-->
+        <profile>
+            <id>env_dep</id>
+            <properties>
+                <jdbc.url>jdbc:mysql:127.1.1.1:3306/ssm_db</jdbc.url>
+            </properties>
+            <!--设置默认启动环境-->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <!--生产环境-->
+        <profile>
+            <id>env_dep</id>
+            <properties>
+                <jdbc.url>jdbc:mysql:127.2.2.2:3306/ssm_db</jdbc.url>
+            </properties>
+        </profile>
+
+        <!--测试环境-->
+        <profile>
+            <id>env_test</id>
+            <properties>
+                <jdbc.url>jdbc:mysql:127.2.2.2:3306/ssm_db</jdbc.url>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <!--tomcat7 插件-->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8080</port>
+                    <path>/</path>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

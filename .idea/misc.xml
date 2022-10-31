@@ -3,6 +3,18 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/JavaWeb" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_01_quickstart" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_02_bean_load" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_03_request_mapping" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_04_request_param" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_05_response" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_06_rest" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_07_rest_case" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_08_ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_09_result" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_10_exception" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_11_page" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC/SpringMVC_12_intercepter" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -14,7 +26,25 @@
         <option value="$PROJECT_DIR$/JavaWeb/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/maven/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_01_quickstart/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_02_bean_load/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_03_request_mapping/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_04_request_param/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_05_response/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_06_rest/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_07_rest_case/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_08_ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_09_result/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_10_exception/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_11_page/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/SpringMVC_12_intercepter/pom.xml" />
+        <option value="$PROJECT_DIR$/maven/maven_02_pojo/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">

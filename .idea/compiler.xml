@@ -11,7 +11,6 @@
         <module name="tomcat-demo" />
         <module name="Spring_17_aop_demo" />
         <module name="Spring_07_di_autoware" />
-        <module name="SpringMVC" />
         <module name="Spring_03_bean_instance" />
         <module name="Spring_23_case_transfer_log" />
         <module name="Spring_14_annotation_third_bean_manager" />
@@ -23,6 +22,7 @@
         <module name="Spring_10_container" />
         <module name="Spring_06_di_constructor" />
         <module name="ajax-demo" />
+        <module name="maven" />
         <module name="Spring_04_bean_lifecycle" />
         <module name="cookie-demo" />
         <module name="Spring_09_datasource" />
@@ -42,6 +42,18 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="html-demo" target="1.8" />
+      <module name="SpringMVC_01_quickstart" target="1.5" />
+      <module name="SpringMVC_02_bean_load" target="1.5" />
+      <module name="SpringMVC_03_request_mapping" target="1.5" />
+      <module name="SpringMVC_04_request_param" target="1.5" />
+      <module name="SpringMVC_05_response" target="1.8" />
+      <module name="SpringMVC_06_rest" target="1.5" />
+      <module name="SpringMVC_07_rest_case" target="1.5" />
+      <module name="SpringMVC_08_ssm" target="1.5" />
+      <module name="SpringMVC_09_result" target="1.5" />
+      <module name="SpringMVC_10_exception" target="1.5" />
+      <module name="SpringMVC_11_page" target="1.5" />
+      <module name="SpringMVC_12_intercepter" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
