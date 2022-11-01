@@ -793,3 +793,25 @@ public User selectByld(int id);
 
 > - 注解完成 **简单功能**
 > - XML 映射语句完成 **复杂功能**
+
+# MyBatis Plus
+
+## MyBatisPlus 简介
+
+MyBatisPlus（简称MP) 是基于 MyBatis 框架基础上开发的增强型工具，旨在简化开发、提高效率d
+
+### 入门案例
+
+
+
+### MyBatisPlus 概述
+
+
+
+## 标准数据层开发
+
+## DQL 控制
+
+## DML 控制
+
+## 快速开发
