@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringBoot_08_ssm" />
+        <module name="SpringBoot_03_read_data" />
+        <module name="SpringBoot_02_base_config" />
+        <module name="SpringBoot_04_profile" />
+        <module name="SpringBoot_07_mybatis" />
+        <module name="SpringBoot_01_quickstart" />
+        <module name="SpringBoot" />
+        <module name="SpringBoot_06_test" />
+        <module name="SpringBoot_05_maven_and_boot_profile" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringBoot_01_quickstart" options="-parameters" />
+      <module name="SpringBoot_02_base_config" options="-parameters" />
+      <module name="SpringBoot_03_read_data" options="-parameters" />
+      <module name="SpringBoot_04_profile" options="-parameters" />
+      <module name="SpringBoot_05_maven_and_boot_profile" options="-parameters" />
+      <module name="SpringBoot_06_test" options="-parameters" />
+      <module name="SpringBoot_07_mybatis" options="-parameters" />
+      <module name="SpringBoot_08_ssm" options="-parameters" />
+    </option>
+  </component>
+</project>

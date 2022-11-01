@@ -1,0 +1,32 @@
+#设置启动的环境
+spring:
+  profiles:
+    active: dev
+---
+#开发
+spring:
+  profiles: dev
+server:
+  port: 8080
+
+---
+#生产
+spring:
+  profiles: pro
+server:
+  port: 8081
+
+---
+#测试
+spring:
+  profiles: test
+server:
+  port: 8082
+enterprise:
+  name: itcast
+  age: 16
+  tel: 40061840000
+  subject:
+    - Jav
+    - End
+    - Front

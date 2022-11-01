@@ -3083,18 +3083,383 @@ public class SpringMvcConfig implements WebMvcConfigurer {
 
 # SpringBoot
 
-### SpringBoot 概念
+## 一、SpringBoot 简介
 
-SpringBoot 提供了一种快速使用 Spring 的方式，基于约定优于配置的思想，其设计目的是用来简化Spring应用的初始搭建以及开发过程，可以让开发人员不必在配置与逻辑业务之间进行思维的切换，全身心的投入到逻辑业务的代码编写中，从而大大提高了开发的效率，一定程度上缩短了项目周期。2014 年 4 月，SpringBoot1.0.0 发布。Spring 的顶级项目之一 (https:/spring.io)。
+### 1.1 概述
+
+SpringBoot 提供了一种快速使用 Spring 的方式，基于约定优于配置的思想，可以让开发人员不必在配置与逻辑业务之间进行思维的切换，全身心的投入到逻辑业务的代码编写中，从而大大提高了开发的效率，一定程度上缩短了项目周期。2014 年 4 月，SpringBoot1.0.0 发布。Spring 的顶级项目之一 (https:/spring.io)。
 
 
 
 ![image-20221020180934234](img/image-20221020180934234.png)
 
-## SpringBoot 快速入门
+SpringBoot 是由 Pivotal 团队提供的全新框架，其设计目的是用来 **简化** Spring 应用的初始搭建以及开发过程
 
-## SpringBoot 起步依赖原理分析
+#### Spring 程序缺点
 
-## SpringBoot 配置
+- 配置繁琐
+
+- 依赖设置繁琐
+
+#### SpringBoot 程序优点
+
+- 自动配置
+- 起步依赖（简化依赖配置）
+- 辅助功能（内置服务器，...)
+
+### 1.2 quickstart
+
+#### 1. 创建新模块，选择 Spring 初始化，并配置模块相关基础信息
+
+![image-20221031105614132](img/image-20221031105614132.png)
+
+#### 2. 选择当前模块需要使用的技术集
+
+![image-20221031105746338](img/image-20221031105746338.png)
+
+#### 3. 开发控制器类
+
+![image-20221031105805765](img/image-20221031105805765.png)
+
+#### 4. 运行自动生成的 Application 类
+
+![image-20221031105826911](img/image-20221031105826911.png)
+
+### 1.3 入门案例
+
+#### 最简 SpringBoot 程序所包含的基础文件
+
+- pom.xml文件
+
+![image-20221031105952368](img/image-20221031105952368.png)
+
+- Application 类
+
+#### Spring 程序与 SpringBoot 程序对比
+
+![image-20221031110132117](img/image-20221031110132117.png)
+
+> **注意事项**
+>
+> 基于 idea 开发 SpringBoot 程序需要确保联网且能够加载到程序框架结构
+
+#### 基于 SpringBoot 官网创建项目
+
+![image-20221031110516493](img/image-20221031110516493.png)
+
+### 1.4 SpringBoot 项目快速启动
+
+#### 前后端分离合作开发
+
+![image-20221031110630540](img/image-20221031110630540.png)
+
+#### 1. 对 SpringBoot 项目打包（执行 Maven 构建指令 package)
+
+#### 2. 执行启动指令
+
+![image-20221031110843513](img/image-20221031110843513.png)
+
+> **注意事项**
+>
+> jar 支持命令行启动需要依赖 maven 插件支持，请确认打包时是否具有 SpringBoot 对应的 maven 插件
+>
+> ![image-20221031110919595](img/image-20221031110919595.png)
+
+### 1.5 SpringBoot 起步依赖
+
+![image-20221031111931476](img/image-20221031111931476.png)
+
+#### starter
+
+- SpringBoot 中常见项目名称，定义了当前项目使用的所有项目坐标，以达到减少依赖配置的目的
+
+![image-20221031112437944](img/image-20221031112437944.png)
+
+#### parent
+
+- 所有SpringBoot:项目要继承的项目，定义了若干个坐标版本号（依赖管理，而非依赖)，以达到减少依赖冲突的目的
+
+
+- spring-boot-starter-parent（2.5.0) 与 spring-boot-starter-parent（2.4.6) 共计 57 处坐标版本不同
+
+#### 实际开发
+
+- 
+  使用任意坐标时，仅书写 GAV 中的 G 和 A,V 由SpringBoot 提供
+
+- 如发生坐标错误，再指定 version (要小心版本冲突)
+
+#### 辅助功能
+
+![image-20221031112511477](img/image-20221031112511477.png)
+
+### 1.6 SpringBoot 程序启动
+
+#### 启动方式
+
+![image-20221031112555142](img/image-20221031112555142.png)
+
+- SpringBoot 在创建项目时，采用 jar 的打包方式
+
+- SpringBoot 的引导类是项目的入口，运行 main 方法就可以启动项目
+
+#### 使用 maven 依赖管理变更起步依赖项
+
+```xml
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-web</artifactId>
+   <!--web起步依赖环境中，排除Tomcat起步依赖-->
+   <exclusions>
+      <exclusion>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-tomcat</artifactId>
+      </exclusion>
+   </exclusions>
+</dependency>
+<!--添加Jetty.起步依赖，版本由SpringBoot的starter控制-->
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-jetty</artifactId>
+</dependency>
+```
+
+Jetty 比 Tomcat 更轻量级，可扩展性更强（相较于 Tomcat),谷歌应用引擎（GAE）已经全面切换为 Jetty
+
+## 二、基础配置
+
+### 2.1 配置格式
+
+#### 修改服务器端口
+
+![image-20221031113403079](img/image-20221031113403079.png)
+
+
+
+##### SpringBoot 提供了多种属性配置方式
+
+- application.properties
+
+  ```properties
+  server.port=80
+  ```
+
+- application.yaml
+
+  ```yaml
+  server:
+    port: 82
+  ```
+
+- application.yml
+
+  ```yaml
+  server:
+    port: 81
+  
+  logging:
+    level:
+      root: info
+  ```
+
+#### SpringBoot 配置文件加载顺序（了解）
+
+![image-20221031114451810](img/image-20221031114451810.png)
+
+### 2.2 yaml
+
+#### YAML(YAML Ain't Markup Language),一种数据序列化格式
+
+#### 优点：
+
+- 容易阅读
+
+- 容易与脚本语言交互
+
+- 以数据为核心，重数据轻格式
+
+![image-20221031114815065](img/image-20221031114815065.png)
+
+#### YAML 文件扩展名
+
+- `.ym1`（**主流**)
+- `.yaml`
+
+### 2.3 yaml 语法规则
+
+- 大小写敏感
+- 属性层级关系使用多行描述，每行结尾使用冒号结束
+- 使用缩进表示层级关系，同层级左侧对齐，只允许使用空格（不允许使用 Tab 键）
+- 属性值前面添加空格（属性名与属性值之间使用冒号 + 空格作为分隔）
+- `#` 表示注释
+- **核心规则**：**数据前面要加空格与冒号隔开**
+
+![image-20221031114928953](img/image-20221031114928953.png)
+
+
+
+### 2.4 yaml 数据读取
+
+#### 使用 `@Value` 读取单个数据，属性名引用方式：`${一级属性名.二级属性名…}`
+
+![image-20221031124620460](img/image-20221031124620460.png)
+
+#### 封装全部数据到 Environment 对象
+
+![image-20221031124701593](img/image-20221031124701593.png)
+
+#### 自定义对象封装指定数据
+
+![image-20221031124744876](img/image-20221031124744876.png)
+
+### 2.5 多环境启动
+
+![image-20221031125708295](img/image-20221031125708295.png)cation.yml
+
+```yaml
+#设置启动的环境
+spring:
+  profiles:
+    active: dev
+---
+#开发
+spring:
+  profiles: dev
+server:
+  port: 8080
+
+---
+#生产
+spring:
+  profiles: pro
+server:
+  port: 8081
+
+---
+#测试
+spring:
+  profiles: test
+server:
+  port: 8082
+```
+
+![image-20221031125624635](img/image-20221031125624635.png)
+
+#### properties.文件多环境启动
+
+![image-20221031125652869](img/image-20221031125652869.png)
+
+### 2.6 多环境启动命令格式
+
+![image-20221031130402877](img/image-20221031130402877.png)
+
+#### 带参数启动 SpringBoot
+
+![image-20221031130438044](img/image-20221031130438044.png)
+
+#### 参数加载优先顺序
+
+[Core Features (spring.io)](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config)
+
+![image-20221031130754388](img/image-20221031130754388.png)
+
+### 2.7 多环境开发控制
+
+![image-20221031130954544](img/image-20221031130954544.png)
+
+#### Maven 与 SpringBoot 多环境兼容
+
+#### 1. Maven 中设置多环境属性
+
+![image-20221031135305097](img/image-20221031135305097.png)
+
+#### 2. SpringBoot 中引用 Maven 属性
+
+![image-20221031135336743](img/image-20221031135336743.png)
+
+#### 3. 多环境开发控制
+
+- Maven 指令执行完毕后，生成了对应的包，其中类参与编译，但是配置文件并没有编译，而是复制到包中
+
+![image-20221031135447274](img/image-20221031135447274.png)
+
+- **解决思路**：对于源码中非 java 类的操作要求加载 Maven 对应的属性，解析 `${}` 占位符
+
+#### 4. 对资源文件开启对默认占位符的解析
+
+![image-20221031135524653](img/image-20221031135524653.png)
+
+### 2.7 配置文件分类
+
+![image-20221031135610756](img/image-20221031135610756.png)
+
+#### SpringBoot 中 4 级配置文件
+
+- 1级：file：`config/application.yml`【最高】
+- 2级：file：`application.yml`
+- 3级：classpath：`config/application.yml`
+- 4级：classpath：`application.yml`【最低】
+
+#### 作用：
+
+- 1 级与 2 级留做系统打包后设置通用属性
+
+- 3 级与 4 级用于系统开发阶段设置通用属性
 
 ## SpringBoot 整合其他框架
+
+### 整合第三方技术 - 整合 JUnit
+
+#### SpringBoot 整合 JUnit
+
+```java
+@SpringBootTest
+class SpringBoot06TestApplicationTests {
+
+   @Autowired
+   private BookService bookService;
+
+   @Test
+   void contextLoads() {
+      bookService.save();
+   }
+}
+```
+
+![image-20221031172608593](img/image-20221031172608593.png)
+
+> **注意事项**
+>
+> 如果测试类在 SpringBoot 启动类的包或子包中，可以省略启动类的设置，也就是省略 classes 的设定
+
+### 基于 SpringBoot 实现 SSM 整合
+
+SpringBoot 整合 Spring（不存在）
+
+SpringBoot 整合 SpringMVC（不存在）
+
+#### SpringBoot 整合 MyBatis（主要）
+
+##### 1. 创建新模块，选择 Spring 初始化，并配置模块相关基础信息
+
+![image-20221031180040344](img/image-20221031180040344.png)
+
+##### 2. 选择当前模块需要使用的技术集（MyBatis、MySQL）
+
+![image-20221031180115626](img/image-20221031180115626.png)
+
+##### 3. 设置数据源参数
+
+```yaml
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm_db?useSSL=false
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+```
+
+> **注意事项**
+>
+> SpringBoot 版本低于 2.4.3（不含），Mysql 驱动版本大于 8.x 时，需要在 url 连接串中配置时区 `jdbc:mysq1://localhost:3306/ssm_db?serverTimezone=UTC` 或在 MySQL 数据库端配置时区解决此问题

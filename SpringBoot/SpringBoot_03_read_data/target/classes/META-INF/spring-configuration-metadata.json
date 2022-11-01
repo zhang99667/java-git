@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "enterprise",
+      "type": "com.itheima.domain.Enterprise",
+      "sourceType": "com.itheima.domain.Enterprise"
+    }
+  ],
+  "properties": [
+    {
+      "name": "enterprise.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.itheima.domain.Enterprise"
+    },
+    {
+      "name": "enterprise.name",
+      "type": "java.lang.String",
+      "sourceType": "com.itheima.domain.Enterprise"
+    },
+    {
+      "name": "enterprise.subject",
+      "type": "java.lang.String[]",
+      "sourceType": "com.itheima.domain.Enterprise"
+    },
+    {
+      "name": "enterprise.tel",
+      "type": "java.lang.String",
+      "sourceType": "com.itheima.domain.Enterprise"
+    }
+  ],
+  "hints": []
+}

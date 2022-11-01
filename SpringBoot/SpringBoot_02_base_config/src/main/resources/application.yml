@@ -1,0 +1,6 @@
+server:
+  port: 81
+
+logging:
+  level:
+    root: info
